@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #000000;
+  background-image: url('https://i.ibb.co/kQXftFn/Bande1.png');
+  background-repeat: repeat;
+  color: #FFFFFF;
+  font-family: 'Roboto Slab', serif;
+}
+
+.input {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #FFFFFF;
+  margin-bottom: 12px;
+}
+.occulte {
+  background-color: #FFFFFF;
+}
+
+#inputNom {
+  margin-left:15%;
+  width:12%;
+}
+#inputTrait {
+  margin-left:2%;
+  width:13%;
+}
+#inputDesc {
+  margin-left:2%;
+  width:41%;
+}
+
+#myTable {
+  border-collapse: collapse;
+  margin-left:auto;
+  margin-right:auto;
+  width: 70%;
+  border: 1px solid #BFBFBF;
+  font-size: 18px;
+}
+#myTable th, #myTable td {
+  text-align: center;
+  padding: 12px;
+}
+#myTable th, #myTable td:first-child {
+  text-align: left;
+}
+#myTable tr {
+  border-bottom: 1px solid #BFBFBF;
+}
+#myTable tr.header {
+  background-color: #3F3F3F;
+}
+#myTable tr:hover {
+  background-color: #808080;
+  color: #000000;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+	$(".occulte").replaceWith("<span class=\"occulte\">Propriété occulte inconnue.</span>");
+});
+
+function filtreNom() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("inputNom");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function filtreTrait() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("inputTrait");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function filtreDesc() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("inputDesc");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+</head>
+<body>
+<div style="border-bottom:solid white; padding-bottom:6px; margin-bottom:20px">
+	<span style=" font-size:2em;"><img style="vertical-align:bottom;" src="https://i.ibb.co/M8N5sr4/Titre.png"> <b>|</b>&ensp;L'équipement</span>
+	<span style="font-size:1em; float:right"><a href="https://emtsuaf.github.io/Gallerie.html"></a> | <a href="https://emtsuaf.github.io/Phase active.html"></a></span>
+</div>
+
+<span style="width:18%"><input type="text" class="input" id="inputNom" onkeyup="filtreNom()" placeholder="Chercher un nom..."></span><span style="width:18%"><input type="text" class="input" id="inputTrait" onkeyup="filtreTrait()" placeholder="Chercher un trait..."></span><span style="width:79%"><input type="text" class="input" id="inputDesc" onkeyup="filtreDesc()" placeholder="Chercher une description..."></span>
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:20%;">Nom</th>
+    <th style="width:15%; text-align:center">Traits</th>
+    <th style="width:75%; text-align:center">Description</th>
+  </tr>
+  <tr>
+    <td><b>Amulette singulière</b></td>
+    <td>[Occulte][2/2 RES][BIJOU]</td>
+    <td><i>« Un truc traditionnel je crois, mon père me l’a solennellement offert à mes 10 ans en me disant de ne jamais le retirer, et sans savoir pourquoi, je l’ai fait. »</i> +1 RÉSISTANCE contre toutes les Attaques d’entités extérieures et spirituelles. <span class="occulte">-1 RÉSISTANCE contre toutes les Attaques d’entités animales et humaines.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Anneau ancien</b></td>
+    <td>[Occulte][Solide][UNIQUE][BIJOU]</td>
+    <td><i>« Un symbole indéchiffrable orne cette chevalière fabriquée dans un acier froid au toucher, très mauvaise idée de porter ça. Tu sais ce que ça veut dire ? »</i> +1 PUI, +1 à l'application Extérieure. <span class="occulte">-1 RÉSISTANCE contre toutes les Attaques d’extérieurs.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Anneau patiné</b></td>
+    <td>[Occulte][2/2 RES][BIJOU]</td>
+    <td><i>« Il est coupant et probablement plein de maladies, mais dieu que sa rouille a une odeur… Intéressante. »</i> +1 DEX. -2 END max, mais le porteur ne l’apprend que lorsqu’il atteint 1 d’END.</td>
+  </tr>
+
+  <tr>
+    <td><b>Anneau précieux</b></td>
+    <td>[Illicite][2/3 RES][BIJOU]</td>
+    <td><i>« Une bague pillée sur un riche anonyme. Pas de marques bizarres, on pourrait essayer de la vendre. »</i> +1 CHA. <span class="occulte">Vendre cet objet augmente de 1 le niveau de danger de la zone environnante.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Anneau tellurique</b></td>
+    <td>[Occulte][Solide][2/2 RES][BIJOU]</td>
+    <td><i>« Porter cette lourde chevalière en pierre dénuée de symbole distinctif est une épreuve de chaque instant, tout comme me lever le matin. »</i> +1 PUI. <span class="occulte">-2 RAI max, mais le porteur ne l’apprend que lorsqu’il atteint 1 de RAI.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Appareil photo</b></td>
+    <td>[Lumière][2/1 RES][1 MAIN]</td>
+    <td><i>« Objectif de haute qualité, prêt en un clin d'œil. Un choix solide avec une grande quantité de pellicules. »</i> +1 SAV dans le cadre de défis de statistique hors confrontation.</td>
+  </tr>
+
+  <tr>
+    <td><b>Attelle</b></td>
+    <td>[Médicament][2/1 RES][CORPS]</td>
+    <td><i>« On se disait bien que ça ne t’arrêterait pas, même si au fond, on l’espérait. »</i> Prescrite par un médecin ou vendu dans la pharmacie d’un hôpital, une attelle permet d’annuler la perte de STAT due à un Symptôme physique d’Os brisé tant qu’elle est portée. Une attelle placée sur l’articulation du bras peut rendre la main de ce bras inutilisable, à la discrétion du maître de jeu.</td>
+  </tr>
+
+  <tr>
+    <td><b>Badge d’hôpital</b></td>
+    <td>[Consommable][Illicite][1/1 RES][BIJOU]</td>
+    <td><i>« Il est super mal fait, mais avec les temps qui courent, est-ce que qui que ce soit a le temps de s’embêter avec ce genre de détails… »</i> -1 RES au coût des [Médicament].</td>
+  </tr>
+
+  <tr>
+    <td><b>Balles standards</b></td>
+    <td>[Illicite][Munition][4/2 RES][1 MAIN]</td>
+    <td><i>« Chacune d’elle doit faire mouche. On est pas les seuls dans la mire de ces abominations. »</i> Cet objet sert de modèle pour acheter 3 munitions de n’importe quelle arme à feu conventionnelle.</td>
+  </tr>
+
+  <tr>
+    <td><b>Bandage</b></td>
+    <td>[Consommable][Médicament][1/0 RES][1 MAIN]</td>
+    <td><i>« Même hors d’une trousse de premiers secours, un bandage est un allié de choix pour arrêter une hémorragie ou empêcher une plaie de s’infecter. »</i> Il peut être utilisé pour guérir un Symptôme mineur de Blessure. Un bandage est à usage unique.</td>
+  </tr>
+
+  <tr>
+    <td><b>Batte de baseball</b></td>
+    <td>[Arme][Solide][3/1 RES][2 MAINS]</td>
+    <td><i>« L’équipe de l’école risque de se demander où elle est passée, mais si on admet qu’un harceleur dément est une balle lancée à grande vitesse, espérons un Home Run. »</i></br>
+        • Frappe [Physique][PUI+8][4 É]</br>
+        • Lancer [Physique][PUI+7][4 É] ; L’acteur ne peut pas Lancer cet objet depuis la ligne arrière.</td>
+  </tr>
+
+  <tr>
+    <td><b>Bible corrigée</b></td>
+    <td>[Livre][2/2 RES][1 MAIN]</td>
+    <td><i>« Les croyances de l'ouest ne peuvent pas apporter que de mauvaises choses. »</i> Après consultation, +1 à l'application Extérieure et -1 à l'application Spirituelle pendant une journée.</td>
+  </tr>
+
+  <tr>
+    <td><b>Boisson énergisante</b></td>
+    <td>[Consommable][Médicament][Nourriture][1/0 RES][1 MAIN]</td>
+    <td><i>« Aah, enfin, je me sens repartir ! Où est l’imbécile de tout à l’heure, je lui toucherais bien deux mots. »</i> +1 DEX pendant le reste de la journée.</td>
+  </tr>
+
+  <tr>
+    <td><b>Bombe de laque</b></td>
+    <td>[Accessoire][1/0 RES][1 MAIN]</td>
+    <td><i>« Tout le monde veut ressembler au chanteur de ce groupe… C’est quoi déjà ? J-Enervation ? »</i> Si le porteur possède un Briquet à gaz, il peut considérer celui-ci et la bombe de laque comme une [Arme][1 MAIN] capable de porter une Projection [Physique][DEX+10][4 D][Zone] qui inflige 1 DGT Discordant aux autres acteurs dans la ligne de front alliée sur une réussite.</td>
+  </tr>
+
+  <tr>
+    <td><b>Boucles porte-bonheur</b></td>
+    <td>[Occulte][3/3 RES][BIJOU]</td>
+    <td><i>« Oui… Pardon tu as dit quoi ? J’étais concentré sur tes… Rien du tout, continue de parler. »</i> +1 CHA, +1 KAR. <span class="occulte">Chaque échec lors d’un défi de CHA devient un échec cinématique, poussant la cible à devenir inappropriée envers le porteur.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Fagot de bougies saintes</b></td>
+    <td>[Accessoire][Consommable][Occulte][2/2 RES][1 MAIN]</td>
+    <td><i>« C’est pas de la cire, mais si je vous explique on risque d’être coincés là encore longtemps. »</i> Un fagot de bougies saintes contient entre 7 et 12 bougies saintes, à déterminer à l’obtention. Deux bougies saintes sont suffisantes pour lancer un sortilège [Rituel]. <span class="occulte">+1 KAR tant qu’au moins une bougie est tenue en main.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Boussole</b></td>
+    <td>[2/1 RES][1 MAIN]</td>
+    <td><i>« Tu te rappelles quand tu as dit qu’elle pointait vers l’élu de ton cœur et que j’étais par hasard entre toi et le Pôle Nord ? C’était amusant. »</i> +1 KAR dans le cadre des défis de statistique. Le porteur peut dépenser 2 EXP afin de relever un défi de statistique échoué à 1 point près.</td>
+  </tr>
+
+  <tr>
+    <td><b>Bouteille brisée</b></td>
+    <td>[Arme][0/0 RES][1 MAIN]</td>
+    <td><i>« Tu ramasses vraiment tout ce que tu trouves, mais au moins, tu sais t’en servir. »</i></br>
+        • Frappe [Physique][DEX+7][3 A] ; L’acteur doit relever un défi de KAR/- ou subir -1 END.</br>
+        • Lancer [Physique][DEX+7][3 A] ; L’objet se brise.</td>
+  </tr>
+
+  <tr>
+    <td><b>Bouteille de champagne</b></td>
+    <td>[Consommable][Nourriture][3/2 RES][1 MAIN]</td>
+    <td><i>« Un grand merci, on en avait tous besoin. »</i> Rend 6 de RAI au consommateur. Une bouteille de champagne peut être partagée, en distribuant la récupération de RAI au choix entre tous les consommateurs. Une fois consommé, cet objet devient une Bouteille vide.</td>
+  </tr>
+
+  <tr>
+    <td><b>Bouteille de vin</b></td>
+    <td>[Consommable][Nourriture][2/1 RES][1 MAIN]</td>
+    <td><i>« Laisse-moi. Si tu savais ce que j’ai vu tu ne me jugerais pas autant, et même comme ça je m’en moquerais, juge-moi autant que tu veux. »</i> +2 END, +2 RAI, inflige le Symptôme Migraine.</td>
+  </tr>
+
+  <tr>
+    <td><b>Bouteille vide</b></td>
+    <td>[Accessoire][1/0 RES][1 MAIN]</td>
+    <td><i>« Une bouteille en verre tristement vide. T’aurais du en prendre une deuxième, on va être loin de la ville pendant un moment. »</i> Une bouteille vide n’a pas de fonction en elle même. Une fois brisée, traitez là comme une Bouteille brisée. Une fois remplie d’un liquide, elle devient une Bouteille de ce liquide.</td>
+  </tr>
+
+  <tr>
+    <td><b>Branche d’arbre</b></td>
+    <td>[Arme][Consommable][0/0 RES][1 MAIN]</td>
+    <td><i>« On comprend que ça te rassure, mais tu veux vraiment l’emmener là dedans ? »</i></br>
+        • Frappe [Physique][PUI+7][3 É]</br>
+        • Lancer [Physique][DEX+7][3 É]</td>
+  </tr>
+
+  <tr>
+    <td><b>Brique</b></td>
+    <td>[Arme][Consommable][0/0 RES][1 MAIN]</td>
+    <td><i>« Une brique abîmée trouvée là, on va se la prendre à l’arrière de la tête au pire moment, c’est certain. »</i></br>
+        • Frappe [Physique][DEX+7][3 É]</br>
+        • Lancer [Physique][DEX+7][5 É]</td>
+  </tr>
+
+  <tr>
+    <td><b>Briquet à gaz</b></td>
+    <td>[Arme][Lumière][Solide][1/0 RES][1 MAIN]</td>
+    <td><i>« Quand quelqu’un te demande si tu as du feu, il devrait s’attendre à se brûler avec la réponse. C’est ce que ma mère disait toujours. »</i></br>
+        • Lancer [Physique][DEX+8][2 Discordants] ; Un succès inflige 2 DGT Discordants au début de la prochaine scène d’actions alliées (en plus des DGT normaux).</td>
+  </tr>
+
+  <tr>
+    <td><b>Canif</b></td>
+    <td>[Arme][Solide][1/0 RES][1 MAIN]</td>
+    <td><i>« Tous ces outils dans un mouchoir de poche, ça appelle au larcin. »</i> +1 à l’application Technologique. Un acteur peut Intéragir avec un canif pour le dégainer ou le ranger sans dépenser d’action.</br>
+        • Frappe [Physique][DEX+8][2 A]</br>
+        • Lancer [Physique][DEX+8][1 A]</td>
+  </tr>
+
+  <tr>
+    <td><b>Capuche spirale</b></td>
+    <td>[Occulte][3/1 RES][TÊTE]</td>
+    <td><i>« Une capuche en cuir avec pour seul orifice une taillade en forme de spirale sur le visage. »</i> +2 PUI, +2 DEX, -2 PER. <span class="occulte">-2 aux sauvegardes de RAI.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Carabine militaire</b></td>
+    <td>[Arme][Charge/2][Illicite][Solide][4/4 RES][2 MAINS]</td>
+    <td><i>« Il est entré chez nous. Il savait qui j’étais. Je suis désolé officier, je ne peux pas me rendre maintenant. »</i> Une carabine militaire charge 1 Tir par Balle standard dépensée.</br>
+        • Frappe [Physique][PUI+8][4 É]</br>
+        • Tir [Physique][PER+8][15 P] ; Le porteur gagne le Symptôme Fatigué.</td>
+  </tr>
+
+  <tr>
+    <td><b>Carte topographique</b></td>
+    <td>[Livre][2/1 RES][2 MAINS]</td>
+    <td><i>« Si le relief à notre gauche est ici, et que la cabane du garde-chasse est là, il n’y a aucun doute, on a tourné en rond. »</i> Après consultation, +1 PER et SAV aux défis visant à ne pas se perdre dans la nature.</td>
+  </tr>
+
+  <tr>
+    <td><b>Cartouche maudite</b></td>
+    <td>[Occulte][Solide][3 RES][0 MAIN]</td>
+    <td><i>« C’est le jeu de tir dont tout le monde parlait l’an dernier ! T’as pu garder la cartouche malgré le rappel de masse ?! »</i> Chaque fois que le porteur utilise l’activité Lancer en confrontation, l’Attaque inflige 2 DGT supplémentaires du même type. <span class="occulte">Chaque fois que le porteur Lance un autre objet, il se casse, même s’il est [Solide].</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Casque de kendo</b></td>
+    <td>[Solide][3/1 RES][TÊTE]</td>
+    <td><i>« Certaines des meilleures années de ma vie. Là bas, on apprenait la discipline de soi et le respect des autres de façon incomparable. »</i> Le porteur subit -1 DGT des Attaques physiques.</td>
+  </tr>
+
+  <tr>
+    <td><b>Chéquier</b></td>
+    <td>[Consommable][Illicite][3/3 RES][1 MAIN]</td>
+    <td><i>« Bien sûr que ça nous aide d’avoir un peu d’extras, mais on te soutient que ça va nous retomber dessus. »</i> Une fois par jour, le porteur peut réduire son KAR de 1 pour gagner 1 RES jusqu'à la prochaine journée.</td>
+  </tr>
+
+  <tr>
+    <td><b>Cheveux noirs</b></td>
+    <td>[Accessoire][Consommable][Occulte][Solide][1/0 RES][1 MAIN]</td>
+    <td><i>« On évitera de te demander où tu les a récupérés, mais il faut avouer qu’un fil de coutûre fait pâle figure face à la robustesse de cette mèche de cheveux. »</i> Le porteur peut s’en servir en même temps qu’un Kit de coutûre pour rendre 3 RAI supplémentaires. <span class="occulte">Chaque matin, le porteur des cheveux noirs doit relever un défi de KAR/Extérieure ou perdre 1 END.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Cigarettes importées</b></td>
+    <td>[Consommable][Illicite][Médicament][3/2 RES][1 MAIN]</td>
+    <td><i>« Les remèdes locaux ne suffisent plus, au moins avec ça je pourrais rester concentré sur ce qui importe. »</i> Un paquet de cigarettes importées contient entre 7 et 12 ciragettes importées, à déterminer à l’obtention. Une fois consommée, une cigarette importée rend 2 RAI et inflige la Malédiction Bouffée de nicotine.</td>
+  </tr>
+
+  <tr>
+    <td><b>Ciseaux mortels</b></td>
+    <td>[Arme][Occulte][4 RES][1 MAIN]</td>
+    <td><i>« Ils claquent au rythme des pleurs de leur propriétaire assassinée sur le campus ! Ou elle les a juste oubliés sur place en déménageant, les journaux n’ont pas pu se mettre d’accord. »</i> <span class="occulte">-1 RAI à chaque Frappe, quelque soit le résultat.</span></br>
+        • Frapper [Physique][SAV+7][7 A]</br>
+        • Lancer [Physique][DEX+7][1 A]</td>
+  </tr>
+
+  <tr>
+    <td><b>Clé anglaise</b></td>
+    <td>[Arme][Solide][3/1 RES][1 MAIN]</td>
+    <td><i>« Ne s’improvise pas bricoleur qui veut, mais si c’est fait pour tenir, autant s’en servir. »</i> +2 PUI aux défis visants à forcer l’ouverture d’un objet.</br>
+        • Frappe [Physique][PUI+6][5 É]</br>
+        • Lancer [Physique][DEX+6][7 É]</td>
+  </tr>
+
+  <tr>
+    <td><b>Cœur artisanal</b></td>
+    <td>[Arme][Occulte][2/2 RES][1 MAIN]</td>
+    <td><i>« Pas d’inquiétude, j’ai vu le vendeur le faire devant moi. C’est une sacrée boule de nœuds, mais-Ah ! Il vient de battre ! »</i> L’Incantation de cet objet n’inflige de DGT qu’aux entités Humaines mortes-vivantes. <span class="occulte">Une Attaque réussie contre tout autre type d’entité inflige la moitié des DGT indiqués au porteur.</span></br>
+        • Incantation [Primordiale][SAV+6][8 Discordants]</td>
+  </tr>
+
+  <tr>
+    <td><b>Cordon à livres</b></td>
+    <td>[Accessoire][1/0 RES][1 MAIN]</td>
+    <td><i>« Quand tu as dit que tu amènerais de la lecture, on ne pensait pas que tu prendrais toute une saga ! »</i> Les livres du porteur n’occupent que la moitié de leur Espace. Si le porteur possède au moins 3 livres, il peut considérer ceux-ci ainsi que le Cordon à livres comme une [Arme][2 MAINS] capable de porter une Frappe [Mêlée][Physique][PUI+10][3 É].</td>
+  </tr>
+
+  <tr>
+    <td><b>Couperet à viande</b></td>
+    <td>[Arme][Solide][3/1 RES][1 MAIN]</td>
+    <td><i>« Pourquoi ce regard, n’est-on pas là pour les cuisiner ? »</i> Les Attaques portées avec un couperet à viande infligent +1 DGT aux entités composées en majorité de chair.</br>
+        • Frappe [Physique][PUI+7][4 A]</br>
+        • Lancer [Physique][DEX+7][3 A]</td>
+  </tr>
+
+  <tr>
+    <td><b>Couteau de cuisine</b></td>
+    <td>[Arme][Solide][1/0 RES][1 MAIN]</td>
+    <td><i>« Le bord aiguisé peut trancher les morceaux de viande les plus durs, ça me paraissait évident de l’emporter. »</i></br>
+        • Frappe [Physique][DEX+7][3 A]</br>
+        • Lancer [Physique][DEX+7][5 A]</td>
+  </tr>
+
+  <tr>
+    <td><b>Couteau militaire</b></td>
+    <td>[Arme][Solide][Illicite][4/2 RES][1 MAIN]</td>
+    <td><i>« Un couteau de poche facile à manier délivré aux soldats pour se défendre, effiler des cordes et trancher tout ce qui a besoin de l’être. »</i></br>
+        • Frappe [Physique][PER+8][5 A]</br>
+        • Lancer [Physique][DEX+8][2 A]</td>
+  </tr>
+
+  <tr>
+    <td><b>Couteau papillon</b></td>
+    <td>[Arme][Solide][2/1 RES][1 MAIN]</td>
+    <td><i>« Ils ne s’attendent jamais à ce que mon joli minois soit si bien armé. C’est pour ça que je frappe toujours la première. »</i> Un acteur peut Intéragir avec un couteau papillon pour le dégainer ou le ranger sans dépenser d’action.</br>
+        • Frappe [Physique][PER+7][2 A] ; Le porteur peut Frapper en dépensant une seule action.</td>
+  </tr>
+
+  <tr>
+    <td><b>Craie hantée</b></td>
+    <td>[Occulte][2/2 RES][1 MAIN]</td>
+    <td><i>« De fins symboles noirs sont apparus sur ces bâtons de craie autrement ordinaires à la suite d’une cérémonie obscure, enfin on espère qu’elle l’était ! »</i> Un bâton de craie hantée est suffisant pour lancer un sortilège [Rituel]. +2 à l'application Spirituelle, mais uniquement pour exorciser des créatures immatérielles ou pour les attaquer directement. <span class="occulte">-1 KAR.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Crâne stylisé</b></td>
+    <td>[Illicite][Occulte][Solide][3/3 RES][1 MAIN]</td>
+    <td><i>« Le front de ce crâne humain est marqué du kanji de l’interdit, et sa machoîre a été remplacée par des cartouches en papier raçontant l’histoire de la mort de son propriétaire. Promis, ce n’est pas mon œuvre. »</i> +1 RAI chaque fois que le porteur lance un sortilège [SOUTIEN]. +1 DGT des Attaques des sortilèges lancés par le porteur. <span class="occulte">Chaque fois que le porteur lance un sortilège, il doit relever un défi opposé de KAR/Extérieure contre le crâne (KAR 7, Extérieure 3) ou subir -1 END alors qu’il sent une morsure sur tous les doigts de la main qui le tient.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Curieuse statuette</b></td>
+    <td>[Occulte][2/2 RES][0 MAIN]</td>
+    <td><i>« Une petite statuette humanoïde se cachant les yeux, un ancien artefact décoré de divers bijoux aux couleurs hypnotisantes qui me rappellent pourquoi j’ai été amené ici… Pardon, j’ai dit quoi ? »</i> +1 SAV, -1 CHA. <span class="occulte">Le porteur est constamment préoccupé par des missions antiques incomplètes.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Cutter</b></td>
+    <td>[Arme][1/1 RES][1 MAIN]</td>
+    <td><i>« Pas bête, on est pas à l’abri d’un carton récalcitrant. Pourquoi ce sourire ? »</i></br>
+        • Frappe [Physique][PER+6][6 A] ; Les DGT passent à [3 A] pour le reste de la confrontation.</br>
+        • Lancer [Physique][DEX+6][2 A]</td>
+  </tr>
+
+  <tr>
+    <td><b>Dague rituelle</b></td>
+    <td>[Arme][Occulte][Solide][3/3 RES][1 MAIN]</td>
+    <td><i>« Le manche enveloppé dans une lanière de cuir, la garde sertie d’une pierre violette semblant s’animer et une lame marquée de symboles invisibles et recouvertes d’un liquide qui ne sèche jamais… C’est l’arme de la victime idéale. »</i> +1 RAI à la scène de conclusion d’une confrontation si le porteur a réussit une Attaque avec une dague rituelle lors d’une scène d’actions alliées. <span class="occulte">Le porteur peut Frapper une entité consentante pour infliger 10 DGT Miraculeux à un ennemi.</span></br>
+        • Frappe [Physique][SAV+6][4 A] ; Le porteur peut Frapper en dépensant une seule action.</br>
+        • Lancer [Physique][DEX+6][3 A]</td>
+  </tr>
+
+  <tr>
+    <td><b>Douille consacrée</b></td>
+    <td>[Consommable][Munition][Occulte][3/3 RES][1 MAIN]</td>
+    <td><i>« L’histoire de la balle que contenait cette douille maculée d’un rouge à lèvres écarlate hier est presque aussi sordide que celle qu’elle racontera demain. »</i> Cette munition est adaptée à n’importe quelle [Arme à feu]. Une arme chargée avec cette munition peut porter un Tir [Primordiale][KAR+5][20 Miraculeux] au lieu de son Tir habituel. <span class="occulte">Rater cette Attaque fait perdre 10 de RAI à son porteur.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Fantasie florale</b></td>
+    <td>[Livre][2/2 RES][1 MAIN]</td>
+    <td><i>« J’ai arrêté de les acheter après le numéro sur cette plante carnivore capable de digérer un kilo de chair par heure, ça m’a glacé le sang. »</i> Après consultation, +1 à l’application Végatale pendant une journée.</td>
+  </tr>
+
+  <tr>
+    <td><b>Fusée</b></td>
+    <td>[1/0 RES][0 MAIN]</td>
+    <td><i>« Moi, en détresse ? Tu ne m'as jamais vu tirer. »</i> Permet de charger un Pistolet lance-fusées.</td>
+  </tr>
+
+  <tr>
+    <td><b>Fusil de chasse</b></td>
+    <td>[Arme][Charge/2][Illicite][Solide][5/5 RES][2 MAINS]</td>
+    <td><i>« Je ne suis pas contre la chasse ouverte, tant que le gibier en vaut la peine. »</i> Un fusil de chasse charge 1 Tir par Balle standard dépensée.</br>
+        • Frappe [Physique][PUI+9][3 É]</br>
+        • Tir [Physique][PER+9][14 P] ; Le porteur gagne le Symptôme Fatigué.</td>
+  </tr>
+
+  <tr>
+    <td><b>Fusil de précision</b></td>
+    <td>[Arme][Charge/2][Illicite][Solide][6/6 RES][2 MAINS]</td>
+    <td><i>« Je ne suis pas contre la chasse ouverte, tant que le gibier en vaut la peine. »</i> Un fusil de précision charge 1 Tir par Balle standard dépensée.</br>
+        • Frappe [Physique][PUI+8][5 É]</br>
+        • Tir [Physique][PER+8][30 P] ; Le porteur gagne le Symptôme Fatigué.</td>
+  </tr>
+
+  <tr>
+    <td><b>Friandises pour animaux</b></td>
+    <td>[Nourriture][1/0 RES][1 MAIN]</td>
+    <td><i>« Pour la énième fois, tu n’as pas de chien ! Non, je ne veux pas les goûter, ça va pas ?! »</i> Un sachet de friandises pour animaux contient entre 7 et 12 friandises, à déterminer à l’obtention. Une friandise pour animaux rend +1 END et fait perdre -1 RAI à un consommateur humain. Donner une friandise à une entité animale confère +1 CHA au porteur dans le cadre des défis de statistique contre lui.</td>
+  </tr>
+
+  <tr>
+    <td><b>Golonka de Jacob</b></td>
+    <td>[Consommable][Nourriture][2/1 RES][2 MAINS]</td>
+    <td><i>« Explose-toi la panse, c’est une recette spéciale de mon ami polonais. »</i> +1 END et +1 END max (non cumulable).</td>
+  </tr>
+
+  <tr>
+    <td><b>Guitare accoustique</b></td>
+    <td>[Arme][Solide][2/1 RES][2 MAINS]</td>
+    <td><i>« J’ai jamais voulu perçer, seulement, ça me fait du bien de gratter les cordes de temps en temps. »</i> Lors d’un repos, le porteur et tous ceux qui l’entendent récupèrent 1 RAI supplémentaire.</br>
+        • Frappe [Physique][PUI+7][4 É] ; Le porteur doit relever un défi de KAR/Technologique ou l’objet se brise.</br>
+        • Lancer [Physique][DEX+7][3 É] ; Le porteur doit relever un défi de KAR/Technologique ou l’objet se brise.</td>
+  </tr>
+
+  <tr>
+    <td><b>Grimoire poussiéreux</b></td>
+    <td>[Livre][Occulte][2/2 RES][1 MAIN]</td>
+    <td><i>« Dans l’armoire de ta grand-mère hein ? Moi je dirais que t’as trouvé ça dans la bibliothèque. Tu sais laquelle. »</i> Après consultation, le porteur doit relever un défi de SAV/-. Un succès cinématique révèle un SORT dans le grimoire, un succès fait gagner 2 EXP, un échec fait perdre 1 RAI, et un échec cinématique impose une Malédiction aléatoire. <span class="occulte">L’effet néfaste de cet objet occulte est inclut dans sa description normale.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Hache d’incendie</b></td>
+    <td>[Arme][Solide][2/1 RES][2 MAINS]</td>
+    <td><i>« Pour une fois, l’alarme de l’école sonnera pour une bonne raison. Un tueur sanguinaire avec une hache à la main, ça fait toujours sensation. »</i> +2 PUI aux défis visant à briser un objet.</br>
+        • Frappe [Physique][PUI+6][6 A] ; Le porteur gagne le Symptôme Fatigué.</br>
+        • Lancer [Physique][DEX+6][3 A]</td>
+  </tr>
+
+  <tr>
+    <td><b>Jerrican d’acide</b></td>
+    <td>[Arme][Solide][2/0 RES][2 MAINS]</td>
+    <td><i>« Vise les yeux, si tu les trouves ! »</i></br>
+        • Projection [Physique][DEX+10][7 D] ; L’objet devient un Jerrican vide.</td>
+  </tr>
+
+  <tr>
+    <td><b>Jerrican d’essence</b></td>
+    <td>[Arme][Consommable][Munition][2/1 RES][2 MAINS]</td>
+    <td><i>« Cette maison de malheur aurait du être rayé de la carte il y a des années. Si la nature ne s’en charge pas, c’est à nous de le faire. »</i> Un Jerrican d’essence permet de charger une Tronçonneuse.</br>
+        • Projection [Physique][DEX+10][0] ; La cible subit 2 DGT supplémentaires de toute Attaque basée sur le feu. L’objet devient un Jerrican vide.</td>
+  </tr>
+
+  <tr>
+    <td><b>Katana</b></td>
+    <td>[Arme][Solide][5/3 RES][2 MAINS]</td>
+    <td><i>« La toilette est à la geisha ce que le katana est au samouraï : une preuve de légitimité. Ne porte aucun des deux sans respecter le poids qui les accompagne. »</i></br>
+        • Frappe [Physique][DEX+7][9 A] ; Le porteur gagne le Symptôme Fatigué.</td>
+  </tr>
+
+  <tr>
+    <td><b>Kit de coûture</b></td>
+    <td>[Médicament][2/1 RES][2 MAINS]</td>
+    <td><i>« Bouge pas ! Je tremble assez comme ça, rien qu’à imaginer le résultat s’il avait visé un peu plus haut… »</i> +3 END, -1 CHA.</td>
+  </tr>
+
+  <tr>
+    <td><b>Lampe de poche</b></td>
+    <td>[Lumière][Solide][2/1 RES][1 MAIN]</td>
+    <td><i>« Elle m’a toujours été fidèle, pourquoi ça changerait aujourd’hui ? »</i> +1 PER. Une lampe de poche ne s’éteint pas lorsqu’on la lâche, qu’on la lance ou qu’on la range. Il faut Intéragir avec pour l’allumer d’une part et pour l’éteindre d’autre part.</td>
+  </tr>
+
+  <tr>
+    <td><b>Lampe de poche lourde</b></td>
+    <td>[Arme][Lumière][Solide][3/2 RES][1 MAIN]</td>
+    <td><i>« Si avec ça tu te plains encore qu’on voit rien je t’assome avec, comme ça t’auras une raison de te plaindre. »</i> +1 PER. Une lampe de poche lourde ne s’éteint pas lorsqu’on la lâche, qu’on la lance ou qu’on la range. Il faut Intéragir avec pour l’allumer d’une part et pour l’éteindre d’autre part.</br>
+        • Frappe [Physique][PUI+7][4 É]</br>
+        • Lancer [Physique][DEX+7][6 É]</td>
+  </tr>
+
+  <tr>
+    <td><b>Livre d’anatomie</b></td>
+    <td>[Livre][2/2 RES][1 MAIN]</td>
+    <td><i>« Emprunté à la bibliothèque du lycée ou à ses propres fournitures, ce livre traite du corps humain dans toutes ses merveilles et toutes ses horreurs, c’est tout à fait inspirant. »</i> Après consultation, +1 à l’application Humaine pendant une journée.</td>
+  </tr>
+
+  <tr>
+    <td><b>Livre de recettes</b></td>
+    <td>[Livre][1/1 RES][1 MAIN]</td>
+    <td><i>« On est toujours étonnés que tu arrives à sublimer le plus fade des sandwich, mais es-tu bien sûr que ce soit saint ? »</i> Après consultation, +1 la valeur d’END et de RAI rendue par tous les objets [Nourriture] consommés par l’acteur.</td>
+  </tr>
+
+  <tr>
+    <td><b>Livre d’histoire marqué</b></td>
+    <td>[Livre][Occulte][2/2 RES][1 MAIN]</td>
+    <td><i>« C’est l’écriture du type qui a emménagé depuis Tokyo l’an dernier. Il a une vision bien particulière de l’histoire du pays, ça peut nous être utile. »</i> Après consultation, -2 RAI et révèle un SORT contenu dans l’objet (choisi aléatoirement) pendant une journée. Le lendemain, le SORT révélé n’existe plus, il faut consulter à nouveau le livre pour révéler un SORT aléatoire. <span class="occulte">L’effet néfaste de cet objet occulte est inclut dans sa description normale.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Manteau Happi</b></td>
+    <td>[2/1 RES][CORPS]</td>
+    <td><i>« Récupéré lors d’un festival de campagne. Les motifs géométriques de ce manteau à manches droites se répètent et s’imbriquent pour donner l’impression d’un tissu infini depuis n’importe quel point de vue. »</i> +1 KAR.</td>
+  </tr>
+
+  <tr>
+    <td><b>Marteau de menuisier</b></td>
+    <td>[Arme][Solide][2/1 RES][1 MAIN]</td>
+    <td><i>« Vu son efficacité sur le bois, pas étonnant qu’il brise les gens aussi facilement… Oublie ce que je viens de dire. »</i></br>
+        • Frappe [Physique][PUI+5][4 É]</br>
+        • Lancer [Physique][DEX+5][5 É]</td>
+  </tr>
+
+  <tr>
+    <td><b>Masque de clown</b></td>
+    <td>[Occulte][2/2 RES][TÊTE]</td>
+    <td><i>« Le nez rouge ne réduit en rien l’horreur de ce sourire. Surtout s’il est fait avec de vraies dents. »</i> +1 DGT aux entités Humaines. <span class="occulte">-1 CHA, le porteur ne peut s’empêcher de vouloir blesser physiquement son prochain.</div></td>
+  </tr>
+
+  <tr>
+    <td><b>Masque d’oni</b></td>
+    <td>[Occulte][3/3 RES][TÊTE]</td>
+    <td><i>« Un masque au sourire sadique avec deux cornes sur le front. Ce sont des LED qui font briller les yeux comme ça, non ? Ah, ok laisse tomber. »</i> Toutes les Attaques physique du porteur infligent 1 DGT supplémentaire. <span class="occulte">-4 END max, mais le porteur ne l’apprend que lorsqu’il atteint 1 d’END. Le porteur se mord les lèvres en permanence pour garder le goût du sang dans la bouche.</div></td>
+  </tr>
+
+  <tr>
+    <td><b>Masque hilard</b></td>
+    <td>[Occulte][2/2 RES][TÊTE]</td>
+    <td><i>« Ce masque aux yeux et au sourire beaucoup trop larges n’a vraiment rien de drôle. »</i> +1 CHA. <span class="occulte">Chaque fois qu’il échoue à un défi de statistique, le porteur perd 1 END ou 1 RAI au hasard.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Masque maussade</b></td>
+    <td>[Occulte][3/3 RES][TÊTE]</td>
+    <td><i>« Ils n’avaient de cesse de me dire de ne pas perdre la face, que mon masque n’était pas assez avenant et chaleureux… Le leur l’était assez, encastré dans la cheminée. »</i> -1 au niveau de danger de tous les défis de statistique. <span class="occulte">Retirer cet objet après l’avoir enfilé décolle le visage du porteur, remplaçant ses attributs faciaux par un creux sombre et réduisant toutes ses STAT de 2.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Masque rituel</b></td>
+    <td>[Accessoire][Occulte][2/2 RES][TÊTE]</td>
+    <td><i>« Un masque blanc nacré avec seulement deux trous pour les yeux et fendu du menton jusqu’au front, comme s’ils se préparaient déjà à être brisés. »</i> -1 DGT aux Attaques psychiques subies par le porteur. <span class="occulte">Porter un masque rituel avec une robe rituelle double tous ses effets. -1 à l’application Extérieure.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Médaillon d’onyx</b></td>
+    <td>[Occulte][Solide][4/4 RES][BIJOU]</td>
+    <td><i>« Une météorite est tombée en plein milieu de la ville sans que personne n’ait le temps de le remarquer. Le reste s’est enfoui dans la terre, mais des écritures blanches ne cessent d’apparaître et de disparaître sur ce fragment. »</i> Le porteur ignore les effets d’une Malédiction qui l’accable. <span class="occulte">La pierre impose une Malédiction aléatoire différente au moment où elle est enfilée et chaque matin suivant. Cette Malédiction aléatoire est levée en même temps que la protection de la pierre lorsque l’objet est retiré.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Menottes metalliques</b></td>
+    <td>[Illicite][Solide][2/1 RES][2 MAINS]</td>
+    <td><i>« Tu n’as pas de droits, et tu n’es pas innocent jusqu’à preuve du contraire. »</i> Le porteur peut lier deux membres d’une entité consentante, immobilisée ou inconsciente afin de les rendre inutilisables. Un acteur menotté aux mains ne peut pas se servir d’objets [2 MAINS] et ne peut pas Frapper, Lancer ou Tirer en confrontation. Un acteur menotté aux pieds ne peut pas Fuir, S’avancer ou Se replier en confrontation.</td>
+  </tr>
+
+  <tr>
+    <td><b>Missive interceptée</b></td>
+    <td>[Illicite][Livre][3/3 RES][1 MAIN]</td>
+    <td><i>« Ils se rassemblent à horaires fixes selon les phases de la lune ?! Comme c’est pratique, pour nous comme pour quiconque souhaite les rejoindre. »</i> Après consultation, un des acteurs peut réduire de 1 le niveau de danger d’un unique défi de statistique, après avoir lancé le dé, mais avant de connaître le résultat du défi.</td>
+  </tr>
+
+  <tr>
+    <td><b>Morceau charnu</b></td>
+    <td>[Consommable][Nourriture][Occulte][1/1 RES][1 MAIN]</td>
+    <td><i>« C’est pas ragoûtant pour un sou, mais c’est tout ce qui nous reste. Ouvre grand et avale tout de suite, ce sera plus facile. »</i> +4 END. <span class="occulte">Impose la Malédiction Parasité (ventre).</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Miroir de courtoisie</b></td>
+    <td>[Livre][Occulte][3/3 RES][1 MAIN]</td>
+    <td><i>« Miroir mon beau miroir… Je t’en prie, dis-moi ce qui m’attend si je persévère dans cette voie. »</i> Après consultation, le lecteur peut lancer le dé d’un défi de statistique avant de décider s’il le relève ou non, et ce pendant une journée. <span class="occulte">Lorsqu’il relève un défi de statistique pour lequel il a utilisé l’effet du miroir, son niveau de danger augmente de 1 ou de 2 au hasard.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Notes volées</b></td>
+    <td>[Livre][Occulte][2/1 RES][1 MAIN]</td>
+    <td><i>« Qui que soit l’auteur de ces notes, il a découvert une chose sans précédent. On peut se battre sans se servir de leur pouvoir, c’est même notre meilleure chance ! »</i> Après consultation, le lecteur peut oublier un SORT qu’il connaît ou détruire un SORT contenu dans un objet pour récupérer +2 RAI. <span class="occulte">Cet objet occulte n'a pas d'effe néfaste.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Nouvelle inspirante</b></td>
+    <td>[Livre][2/2 RES][1 MAIN]</td>
+    <td><i>« Les mains serrées sur son arme, savoir qu’elle était le dernier rempart entre son peuple et les tyrans intergalactiques lui donna la force d’ouvrir une dernière porte, et de mener la dernière bataille. Sa dernière bataille. »</i> Après consultation, chaque fois que le lecteur obtient un succès cinématique lors d’une Attaque pendant le reste de la journée, il inflige 2 DGT supplémentaires du même type que l’attaque.</td>
+  </tr>
+
+  <tr>
+    <td><b>Œil de verre</b></td>
+    <td>[Consommable][Occulte][2/2 RES][BIJOU]</td>
+    <td><i>« Elle savait toujours où on était, un atout pareil ne peut avoir que du bon. »</i> Il faut d’abord extraire l’un de ses yeux pour enfiler ce bijou (-3 END, -1 RAI). +1 PER. <span class="occulte">Le porteur ne peut pas obtenir d’échec cinématique ni de succès cinématique lors d’un défi de PER.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Pancakes</b></td>
+    <td>[Consommable][Nourriture][1/0 RES][1 MAIN]</td>
+    <td><i>« Ce n'est pas le petit déjeuner le plus sain qui soit, mais c’est mon péché mignon. »</i> +2 END. -1 au niveau de danger du prochain défi de statistique.</td>
+  </tr>
+
+  <tr>
+    <td><b>Paquet de cigarettes</b></td>
+    <td>[Consommable][Médicament][2/1 RES][1 MAIN]</td>
+    <td><i>« T’as dit que t’arrêterais, mais pour être franc, avec tout ça même moi je me laisserais tenter. »</i> Un paquet de cigarettes contient entre 7 et 12 ciragettes, à déterminer à l’obtention. Une fois consommée, une cigarette rend +1 RAI et impose la Malédiction Bouffée de nicotine.</td>
+  </tr>
+
+  <tr>
+    <td><b>Pelle</b></td>
+    <td>[Arme][Solide][3/1 RES][2 MAINS]</td>
+    <td><i>« Tu as dit que tu voulais enterrer le problème. Il est où ce salopard ? »</i></br>
+        • Frappe [Physique][PUI+6][6 É] ; Le porteur gagne le Symptôme Fatigué.</br>
+        • Lancer [Physique][PUI+6][5 É] ; Le porteur ne peut pas Lancer cet objet depuis la ligne arrière.</td>
+  </tr>
+
+  <tr>
+    <td><b>Perles de prière</b></td>
+    <td>[Occulte][2/2 RES][BIJOU]</td>
+    <td><i>« C’est un collier peu rustique, mais les gens de ce village savent comment repousser les esprits vengeurs, on devrait s’en inspirer. »</i> Le porteur peut accomplir l’activité Exorciser en ne dépensant qu’une seule action. <span class="occulte">S’il brise le dernier point d’ancrage d’une entité Spirituelle, le porteur doit relever un défi de CHA/Spirituelle ou subir une Malédiction aléatoire.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Petit cierge</b></td>
+    <td>[Arme][Lumière][Occulte][2/2 RES][1 MAIN]</td>
+    <td><i>« Une toute petite bougie faite de cire corporelle dans laquelle on a gravé du kanji du feu. Les anciens arts reviennent au goût du jour. »</i> <span class="occulte">Contient le SORT Flamme fugace qui est révélé au porteur tant qu’il tient le cierge.</span></br>
+        • Projection [Physique][SAV+8][3 D]</br>
+        • Lancer [Physique][DEX+8][1 D]</td>
+  </tr>
+
+  <tr>
+    <td><b>Pièce usée</b></td>
+    <td>[Médicament][Occulte][Solide][2/2 RES][1 MAIN]</td>
+    <td><i>« Un triangle avec un cercle dans chaque sommet est gravé sur une face de cette pièce creuse enroulée dans un fin fil noir. Idéale pour un innoncent pile ou face. »</i> Lève une Malédiction. <span class="occulte">Lors de la prochaine confrontation, une personnification de la Malédiction levée arrive en ligne arrière adverse.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Pied de biche</b></td>
+    <td>[Arme][Solide][2/1 RES][2 MAINS]</td>
+    <td><i>« En voilà un outil pratique et durable. Tu peux me croire, il ne plie même pas sous les coups ! »</i> +2 PUI aux défis visant à forcer l’ouverture d’un objet.</br>
+        • Frappe [Physique][PUI+7][4 É]</br>
+        • Lancer [Physique][DEX+7][5 É]</td>
+  </tr>
+
+  <tr>
+    <td><b>Pillules d’antidépresseur</b></td>
+    <td>[Consommable][Médicament][2/1 RES][1 MAIN]</td>
+    <td><i>« Je pleure tous les soirs depuis qu’on a commencé, et le pire, c’est que je suis incapable de m’arrêter. »</i> +2 RAI. Une boîte de pillules d’antidépresseur contient 4 doses. Un acteur ne peut profiter des effets d’une dose qu’une fois par jour au maximum. </td>
+  </tr>
+
+  <tr>
+    <td><b>Pillules d’antidouleur</b></td>
+    <td>[Consommable][Médicament][2/1 RES][1 MAIN]</td>
+    <td><i>« Oui c’est efficace, mais évite l’overdose s’il te plaît, tu me fais déjà assez peur comme ça. »</i> +2 END. Une boîte de pillules d’antidouleur contient 4 doses. Un acteur ne peut profiter des effets d’une pillule antidouleur qu’une fois par jour au maximum. </td>
+  </tr>
+
+  <tr>
+    <td><b>Pistolet lance-fusées</b></td>
+    <td>[Arme][Charge/1][Lumière][2/1 RES][1 MAIN]</td>
+    <td><i>« Tu comptes appeler qui à l’aide exactement ? Les gens qui nous suivent depuis plus de deux heures ? »</i> Un pistolet lance-fusées charge 1 Tir par fusée dépensée.</br>
+        • Tir [Physique][PER+9][2 D] ; La cible est visible jusqu’à la prochaine scène d’actions alliées.</td>
+  </tr>
+
+  <tr>
+    <td><b>Poudre de vision</b></td>
+    <td>[Consommable][Occulte][2/2 RES][1 MAIN]</td>
+    <td><i>« Quel drôle de nom pour une poudre presque translucide. Quoi que maintenant que je le dis, on dirait qu’elle reflète les quarante-neuf couleurs de l’arc-en-ciel. »</i> Lorsqu’elle est jetée sur une entité invisible (matérielle ou non), celle-ci devient visible pendant 1 heure. Jeter de la poudre de vision est considéré comme Intéragir avec dans le cadre d’une confrontation. <span class="occulte">Cet objet occulte n’a pas d’effet néfaste, mais voir des entités invisibles peut s’avérer dangereux en tant que tel.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Poupée liée</b></td>
+    <td>[Arme][Occulte][2/2 RES][1 MAIN]</td>
+    <td><i>« Cette petite poupée tient dans la main et est couverte d’une légère couche de peinture rouge. Prends-là, ça craint rien, c’est juste un bibelot pour faire sensation. »</i> <span class="occulte">Chaque fois qu’il Attaque avec, le porteur perd -1 END (avec l’Attaque psychique) ou -1 RAI (avec l’Attaque physique).</span></br>
+        • Incantation [Physique][SAV+8][5 variable] ; Le porteur doit blesser la poupée avec un autre objet dont la forme détermine le type de DGT.</br>
+        • Incantation [Psychique][SAV+8][5 D]</td>
+  </tr>
+
+  <tr>
+    <td><b>Poussière macabre</b></td>
+    <td>[Consommable][Nourriture][Occulte][2/2 RES][1 MAIN]</td>
+    <td><i>« De la cendre blanche qui scintille quand on la touche… Si tu te défonces avec ça, je ne donne pas cher de notre amitié. »</i> +4 EXP, <span class="occulte">-1 KAR.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Rasoir à main</b></td>
+    <td>[Arme][2/1 RES][1 MAIN]</td>
+    <td><i>« Je fais d’une pierre deux coups. Si on en a pas besoin pour calmer la personne qui est derrière tout ça, je pourrais en faire un usage conventionnel en rentrant à l’hôtel. »</i></br>
+        • Frappe [Physique][PER+8][4 A]</td>
+  </tr>
+
+  <tr>
+    <td><b>Revolver de police</b></td>
+    <td>[Arme][Charge/6][Illicite][Solide][4/4 RES][1 MAIN]</td>
+    <td><i>« Les mains en l’air ! Chacune d’elles ! »</i> Un revolver de police charge 1 Tir par Balle standard dépensée. Le porteur peut tenir un revolver de police à [2 MAINS] pour augmenter de 1 la PRÉCISION de son Tir.</br>
+        • Frappe [Physique][PUI+8][3 É]</br>
+        • Tir [Physique][PER+8][9 P]</td>
+  </tr>
+
+  <tr>
+    <td><b>Robe rituelle</b></td>
+    <td>[Accessoire][Occulte][2/2 RES][CORPS]</td>
+    <td><i>« Une cape de soie noire sans aucune tâche ni sceau protecteur. On doit se plier aux règles de l’univers qui s’impose à nous. C’est seulement en honorant les forces qui nous échappent que l’on pourra profiter d’eux. »</i> Contient un SORT qui est révélé au porteur tant qu’il ne retire pas la robe. Porter une robe rituelle avec un masque rituel double tous ses effets. <span class="occulte">-1 PUI, la robe est excessivement lourde à porter.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Rosaire</b></td>
+    <td>[2/1 RES][BIJOU]</td>
+    <td><i>« Puisse-t-on trouver la paix, parce que c'est pas gagné. »</i> +1 à l'application Spirituelle, -1 à l'application Extérieure.</td>
+  </tr>
+
+  <tr>
+    <td><b>Sac à dos</b></td>
+    <td>[Solide][1/1 RES][CORPS]</td>
+    <td><i>« Incontournable lors des voyages, ce sac à dos compartimenté est idéal pour organiser son arsenal. »</i> Le porteur augmente son Espace de 1. Une fois par scène d’actions alliées d’une confrontation, le porteur peut Intéragir pour prendre en main un objet qu’il porte ou pour ranger un objet qu’il tient en main sans dépenser d’action.</td>
+  </tr>
+
+  <tr>
+    <td><b>Scalpel</b></td>
+    <td>[Arme][Solide][3/1 RES][1 MAIN]</td>
+    <td><i>« Il n’y a rien de plus simple. Il suffit de suivre les pointillés et d’inciser juste ce qu’il faut pour le faire tomber en lambeaux. »</i></br>
+        • Frappe [Physique][SAV+7][4 A]</br>
+        • Lancer [Physique][DEX+7][1 A]</td>
+  </tr>
+
+  <tr>
+    <td><b>Scie à os</b></td>
+    <td>[Arme][2/1 RES][1 MAIN]</td>
+    <td><i>« Quelques cours pratiques ne feraient pas de mal aux futurs chirurgiens, encore faut-il trouver des volontaires. »</i></br>
+        • Frappe [Physique][SAV+7][5 A] ; Le porteur gagne le Symptôme Fatigué.</br>
+        • Lancer [Physique][DEX+7][2 A]</td>
+  </tr>
+
+  <tr>
+    <td><b>Sel béni</b></td>
+    <td>[Consommable][Occulte][1/1 RES][1 MAIN]</td>
+    <td><i>« J’ai lu qu’un simple cercle de sel pouvait enfermer le pire des démons, ça vaut le coup d’essayer ! »</i> Une poignée de sel béni est suffisante pour lancer un sortilège [Rituel]. <span class="occulte">Le sel béni n’inflige de dégâts qu’aux entités Spirituelles.</span></br>
+        • Lancer [Primordiale][DEX+5][8 Miraculeux]</td>
+  </tr>
+
+  <tr>
+    <td><b>Semi-automatique</b></td>
+    <td>[Arme][Charge/6][Illicite][Solide][5/5 RES][1 MAIN]</td>
+    <td><i>« Une arme de destruction pareille n’a rien à faire dans ce pays, mais ces aberrations non plus. »</i> Un semi-automatique charge 1 Tir par Balle standard dépensée. Le porteur peut tenir un semi-automatique à [2 MAINS] pour augmenter de 1 la PRÉCISION de son Tir.</br>
+        • Frappe [Physique][PUI+8][3 É]</br>
+        • Tir [Physique][PER+8][7 P] ; Le porteur peut Tirer en dépensant une seule action.</td>
+  </tr>
+
+  <tr>
+    <td><b>Serpe antique</b></td>
+    <td>[Arme][Solide][1/0 RES][1 MAIN]</td>
+    <td><i>« Il voulait s’en débarrasser. Je te l’accorde, elle est en très mauvaise état, mais tu ma prévenu au dernier moment ! »</i> À chaque Attaque réussie, la serpe a une chance sur deux d’infliger 1 DGT supplémentaire, puis une chance sur deux de se briser.</br>
+        • Frappe [Physique][DEX+6][4 A]</br>
+        • Lancer [Physique][DEX+6][4 A]</td>
+  </tr>
+
+  <tr>
+    <td><b>Soda</b></td>
+    <td>[Consommable][Nourriture][3/1 RES][1 MAIN]</td>
+    <td><i>« Beaucoup trop cher pour ce que c’est, comme toutes les drogues légales. »</i> +2 RAI.</td>
+  </tr>
+
+  <tr>
+    <td><b>Steak de porc saignant</b></td>
+    <td>[Consommable][Nourriture][1/0 RES][2 MAINS]</td>
+    <td><i>« Oui j’ai bien lu l’étiquette, mais je te soutiens que ce n’est pas du porc. C’est pas grave, j’ai faim de toute façon. »</i> +2 END, le consommateur doit relever un défi de KAR/Animale ou subir la malédiction Faim insatiable.</td>
+  </tr>
+
+  <tr>
+    <td><b>Taiyaki</b></td>
+    <td>[Consommable][Nourriture][1/0 RES][2 MAINS]</td>
+    <td><i>« Délicieux ! Y’a pas à dire, les pêcheurs des petits villages mettent plus de passion dans leur poisson ! »</i> +1 REA.</td>
+  </tr>
+
+  <tr>
+    <td><b>Tome flétri</b></td>
+    <td>[Livre][Occulte][3/3 RES][2 MAINS]</td>
+    <td><i>« La couverture de ce recueilles de prières démentes à la pourriture est recouverte de sceaux de vulnérabilités… et est faite avec des morceaux maladroitement cousus de la peau d’un mammifère. »</i> Après consultation, révèle le SORT Flétrissure fulgurante au porteur pendant une journée. <span class="occulte">Après consultation, le porteur gagne le Symptôme Mutilé (2 MAINS).</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Totem épouvantable</b></td>
+    <td>[Occulte][3/1 RES][BIJOU]</td>
+    <td><i>« Ce cette statuette cylindrique écrasée sur elle-même était censée être une tête humaine. Heureusement qu’ils ont mis de quoi attacher un mousqueton dans l’oreille. »</i> Le porteur ne peut plus obtenir d’échec cinématique. <span class="occulte">-3 RAI max, mais le porteur ne l’apprend que lorsqu’il atteint 1 de RAI.</span></td>
+  </tr>
+
+  <tr>
+    <td><b>Torche</b></td>
+    <td>[Arme][Lumière][1/0 RES][1 MAIN]</td>
+    <td><i>« Non, je ne me crois pas dans un donjon médiéval ! Faut bien qu’on y voit quelque chose dans ce trou à rats… »</i> Si elle n’est pas allumée, une torche peut porter les mêmes attaques qu’une Branche, et pas celles décrites ci-dessous.</br>
+        • Frappe [Physique][PER+7][4 D] ; La lumière ne s’éteint pas.</br>
+        • Lancer [Physique][PER+7][4 D]</td>
+  </tr>
+
+  <tr>
+    <td><b>Traitement antalgique</b></td>
+    <td>[Consommable][Médicament][3/1 RES][1 MAIN]</td>
+    <td><i>« C’est comme de l’eau de source se répendant dans tes veines. Si on ne ressentait plus la douleur, la vie serait géniale. »</i> +4 END, -2 RAI max.</td>
+  </tr>
+
+  <tr>
+    <td><b>Traitement expérimental</b></td>
+    <td>[Consommable][Médicament][3/1 RES][1 MAIN]</td>
+    <td><i>« Et tout le monde trouve ça normal, qu’on vende des mixtures inconnues en libre service dans des seringues plus que douteuses. »</i> +4 RAI, -2 END max.</td>
+  </tr>
+
+  <tr>
+    <td><b>Tronçonneuse</b></td>
+    <td>[Arme][Charge/10][Solide][4/2 RES][2 MAINS]</td>
+    <td><i>« Ah oui, tu lui en veux à ce point alors ? »</i> Une tronçonneuse charge 5 Frappes par Jerrican d’essence dépensé.</br>
+        • Frappe [Physique][PER+7][5 P] ; Le porteur peut Frapper en dépensant une seule action.</br>
+        • Lancer [Physique][PUI+7][7 É] ; L’acteur ne peut pas Lancer cet objet depuis la ligne arrière.</td>
+  </tr>
+
+  <tr>
+    <td><b>Trousse médicale</b></td>
+    <td>[Médicament][4/2 RES][2 MAINS]</td>
+    <td><i>« Un vrai hôpital portable. Plus qu’à se blesser gravement et ce sera une acquisition rentable. »</i> Permet de soigner un Symptôme physique majeur et deux Symptômes physiques mineurs avant d’être entièrement consommée.</td>
+  </tr>
+
+  <tr>
+    <td><b>Vieille batte</b></td>
+    <td>[Arme][1/0 RES][2 MAINS]</td>
+    <td><i>« Une batte d’entraînement que tous les pères passionés offrent à leur fils, qu’il en veuille ou non. La lanière enroulée sur la prise se décolle déjà. »</i></br>
+        • Frappe [Physique][PUI+7][4 É] ; Le porteur gagne le Symptôme Fatigué.</br>
+        • Lancer [Physique][DEX+7][4 É]</td>
+  </tr>
+
+  <tr>
+    <td><b>Violon résonnant</b></td>
+    <td>[Arme][Occulte][Solide][3/3 RES][2 MAINS]</td>
+    <td><i>« Un instrument d’un bois rouge profond qui, si on tend l’oreille, laisse résonner une note sourde en permanence. Je t’interdit d’en jouer tant que je suis dans les parages. »</i> <span class="occulte">Le porteur est incapable de Frapper, de Lancer, de Projeter ou de Tirer lors de la première scène d’actions alliées d’une confrontation (et ce même s’il ne tenait pas le violon en main).</span></br>
+        • Incantation [Psychique][CHA+10][6 D][Zone]</br>
+        • Lancer [Physique][DEX+7][1 É]</td>
+  </tr>
+
+  <tr>
+    <td><b>Yakitori mystère</b></td>
+    <td>[Consommable][Nourriture][2/1 RES][2 MAINS]</td>
+    <td><i>« Le serveur a insisté pour que les ingrédients restent secrets. Arrête de te méfier ne serait-ce qu’un instant, joue le jeu ! »</i> +4 RAI, -1 END.</td>
+  </tr>
+</table>
+
+</body>
+</html>
