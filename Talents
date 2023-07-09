@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #000000;
+  background-image: url('https://i.ibb.co/kQXftFn/Bande1.png');
+  background-repeat: repeat;
+  color: #FFFFFF;
+  font-family: 'Roboto Slab', serif;
+}
+
+.input {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #FFFFFF;
+  margin-bottom: 12px;
+}
+
+#inputNom {
+  margin-left:15%;
+  width:12%;
+}
+
+#inputDesc {
+  margin-left:2%;
+  width:56%;
+}
+
+#myTable {
+  border-collapse: collapse;
+  margin-left:auto;
+  margin-right:auto;
+  width: 70%;
+  border: 1px solid #BFBFBF;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: center;
+  padding: 12px;
+}
+#myTable th, #myTable td:first-child {
+  text-align: left;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #BFBFBF;
+}
+
+#myTable tr.header {
+  background-color: #3F3F3F;
+}
+#myTable tr:hover {
+  background-color: #808080;
+  color: #000000;
+}
+</style>
+
+<script>
+function filtreNom() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("inputNom");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function filtreDesc() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("inputDesc");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+</head>
+<body>
+<div style="border-bottom:solid white; padding-bottom:6px; margin-bottom:20px">
+	<span style=" font-size:2em;"><img style="vertical-align:bottom;" src="https://i.ibb.co/M8N5sr4/Titre.png"> <b>|</b>&ensp;Les talents d'acteur</span>
+	<span style="font-size:1em; float:right"><a href="https://emtsuaf.github.io/Gallerie.html"></a> | <a href="https://emtsuaf.github.io/Phase active.html"></a></span>
+</div>
+
+<span style="width:18%"><input type="text" class="input" id="inputNom" onkeyup="filtreNom()" placeholder="Chercher un nom..."></span><span style="width:80%"><input type="text" class="input" id="inputDesc" onkeyup="filtreDesc()" placeholder="Chercher une description..."></span>
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:20%;">Nom</th>
+    <th style="width:80%;text-align:center">Description</th>
+  </tr>
+  <tr>
+    <td><b>姿 Addiction ancrée</b></td>
+    <td><i>« Méditez tant que vous voulez, ça me suffira. »</i>.</br>
+        <b>Avantages</b> +1 cigarette chaque jour, mais les cigarettes consommées ne rendent plus de RAI ; L’acteur a développé une accoutumance à certaines drogues sans même le savoir.</br>
+        <b>Soutien</b> +1 RAI si l'Attaque réussit, -1 sinon.</br>
+        <b>Fortune</b> Traite immédiatement un Symptôme physique.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Adresse épatante</b></td>
+    <td><i>« Ne cligne pas des yeux. »</i>.</br>
+        <b>Avantages</b> +1 DEX ; L’acteur est particulièrement agile de ses mains.</br>
+        <b>Soutien</b> Permet de prendre une [Arme][1 MAIN] immédiatement après un Lancer, sans dépenser d'action.</br>
+        <b>Fortune</b> Un objet utilisé par l’acteur qui devrait se briser ne le fait pas.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Aisance naturelle</b></td>
+    <td><i>« Quelque chose dans l’air m’apaise. »</i>.</br>
+        <b>Avantages</b> +1 aux applications Minérale et Végétale ; L’acteur a un meilleur instinct dans les milieux naturels.</br>
+        <b>Soutien</b> +2 DGT contre les entités minérales et végétales.</br>
+        <b>Fortune</b> Relève automatiquement un défi opposé à une entité minérale ou végétale.</td>
+  </tr>
+  
+  <tr>
+    <td><b>挙 Ami des animaux</b></td>
+    <td><i>« Tout est dans le regard avec eux, il suffit d’être ferme. »</i>.</br>
+        <b>Action - Dresser (2∧ ; Défensive)</b> L’acteur joue de son expérience pour calmer une entité animale troublée. Il peut relever un défi de CHA/Animale pour empêcher une entité animale de porter une Attaque à la prochaine scène d’actions adverses. S’il relève ce défi avec succès trois fois dans la même confrontation, l’entité ciblée quitte le camp adverse.</br>
+        <b>Fortune</b> Relève automatiquement un défi sur l’application Animale.</td>
+  </tr>
+  
+  <tr>
+    <td><b>姿 Apprentissage par l'échec</b></td>
+    <td><i>« L’assiduité compense la médiocrité. »</i>.</br>
+        <b>Avantages</b> +1 EXP à chaque perte d'END/RAI involontaire ; L’acteur ne se sent jamais acculé ou impuissant.</br>
+        <b>Soutien</b> Si l'acteur est blessé, subit la moitié des dégâts à sa place.</br>
+        <b>Fortune</b> Un échec cinématique devient un succès cinématique.</td>
+  </tr>
+
+  <tr>
+    <td><b>挙 Baroudeur belliqueux</b></td>
+    <td><i>« Ça t’amuse de nous faire peur hein ? Viens te frotter à aussi fort que toi, espèce de minable ! »</i>.</br>
+        <b>Action - Lutter (2∧ ; Offensive)</b> L’acteur tente d’agripper une entité sur la ligne de front adverse pour prendre toute son attention et l’empêcher de blesser ses alliés. Chacun doit relever un défi opposé de PUI. Si l’acteur a l’ascendant, sa cible voit la PRÉCISION de sa prochaine Attaque augmenter de 2, mais elle est incapable de porter une Attaque contre une autre entité que lui, excepté s’il s’agit d’une [Zone].</br>
+        <b>Fortune</b> Augmente de 4 les DGT d’une Attaque portée par l’acteur dans le cadre de l’activité Cogner.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Bonne fortune</b></td>
+    <td><i>« Ne soyez pas jaloux de mon talent. »</i>.</br>
+        <b>Avantages</b> +1 KAR ; L’acteur connaît souvent des circonstances avantageuses à sa réussite.</br>
+        <b>Soutien</b> Permet d'éviter de contracter un unique Symptôme (une fois par controntation).</br>
+        <b>Fortune</b> Un échec cinématique devient un succès cinématique.</td>
+  </tr>
+
+  <tr>
+    <td><b>挙 Calculateur cynique</b></td>
+    <td><i>« Tout le monde fonctionne de la même façon, et pour les mêmes raisons. On vit dans un monde en noir et blanc quoi que te dise tes amis. »</i>.</br>
+        <b>Action - Cerner (2∧ ; Offensive)</b> L’acteur porte une Attaque visant à démoraliser une entité sur la ligne de front adverse en exposant sa façon de fonctionner, ses failles et ses affects. Cette Attaque possède les propriétés suivantes : [Psychique][CHA+7][2 D].</br>
+        <b>Fortune</b> Annule entièrement les DGT infligés à l’acteur par l’Attaque psychique d’une entité.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Calme olympien</b></td>
+    <td><i>« J’irais jamais plus vite que la musique. »</i>.</br>
+        <b>Avantages</b> +1 END/RAI à chaque repos ; L’acteur a un sommeil difficile à perturber.</br>
+        <b>Soutien</b> Les récupérations d'END et de RAI augmentent de 1.</br>
+        <b>Fortune</b> Quelque soit son END actuelle, l’acteur réussit une sauvegarde d’END.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Chargeur sans fond</b></td>
+    <td><i>« J’en garde toujours une de côté, pour moi. »</i>.</br>
+        <b>Avantages</b> Chaque jour, l’acteur gagne 1 Balle standard s'il n'en avait pas ; —.</br>
+        <b>Soutien</b> +2 DGT aux Frappes portées avec une [Arme] dotée d'un Tir.</br>
+        <b>Fortune</b> Peut utiliser l’Attaque d’une [Arme][Charge/X] sans la charger.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Chasse acharnée</b></td>
+    <td><i>« Si on doit se battre pour ne pas disparaître, j’en suis. »</i>.</br>
+        <b>Avantages</b> +1 PRÉCISION et +1 DGT à la première Attaque à chaque confrontation, -1 END max et -1 RAI max ; L’acteur a l’œil pour deviner qu’une entité Extérieure tente de se faire passer pour autre chose.</br>
+        <b>Soutien</b> -1 PRÉCISION, +2 DGT.</br>
+        <b>Fortune</b> Relève automatiquement un défi opposé contre une entité Extérieure.</td>
+  </tr>
+
+  <tr>
+    <td><b>挙 Chirurgien amateur</b></td>
+    <td><i>« Concentre-toi sur ta respiration, le pronostic vital n’est pas engagé, tout va bien se passer. »</i>.</br>
+        <b>Action - Garrotter (2∨ ; Coopérative)</b> L’acteur utilise quelques outils rustiques à sa disposition pour rafistoler une entité consentante. Il désigne un acteur sur la ligne arrière alliée qui souffre d’un Symptôme physique qui ne subit plus aucun effet de ce Symptôme jusqu’à la fin de la confrontation.</br>
+        <b>Fortune</b> Où qu’il soit, l’acteur trouve un objet [Médicament] qui coûte 3 RES ou moins.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Club sportif</b></td>
+    <td><i>« On ne gagne jamais seul. »</i>.</br>
+        <b>Avantages</b> +1 PUI ; L’acteur est fédérateur lorsqu’il s’agit de travailler en équipe.</br>
+        <b>Soutien</b> -1 RÉSISTANCE au type de DGT de l'Attaque si réussie (jusqu’à un minimum de 0).</br>
+        <b>Fortune</b> L’acteur relance un défi ou une Attaque échouée par un allié en utilisant ses propres STAT.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Collection ésotérique</b></td>
+    <td><i>« Un sentiment de nostalgie accompagne chacun d’eux. »</i>.</br>
+        <b>Avantages</b> Obtient un talisman artisanal ([Occulte][UNIQUE][0 MAIN] le premier échec cinématique quotidien compte comme un échec) ; L’acteur remarque facilement les objets chargés d’histoire.</br>
+        <b>Soutien</b> +1 PRÉCISION si l'Attaque est portée avec un objet [Occulte].</br>
+        <b>Fortune</b> L’acteur apprend l’histoire d’un objet [Occulte] qu’il tient en main.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Compréhension arcanique</b></td>
+    <td><i>« La magie n’est qu’une science incomprise. »</i>.</br>
+        <b>Avantages</b> L’acteur peut connaître jusqu'à 1 SORT contenu dans un objet sans l'avoir sur lui, +1 à l'application Minérale ; L’acteur peut manifester des effets mineurs pour se prémunir d’évènements surnaturels.</br>
+        <b>Soutien</b> +2 DGT si un acteur a Incanté pendant cette scène.</br>
+        <b>Fortune</b> Incante un sortilège [Éphémère] qu’il connaît sans le détruire.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Connexion d'outre-tombe</b></td>
+    <td><i>« Pourquoi pleurer ceux qui retournent d’où ils viennent. »</i>.</br>
+        <b>Avantages</b> Chaque jour, l’acteur peut subir -2 RAI pour apprendre un SORT qu'il oubli au soir ; L’acteur peut obtenir plus d’information des entités spirituelles.</br>
+        <b>Soutien</b> +2 DGT Discordants si l'attaquant est sous l'effet d'un sortilège [Rituel].</br>
+        <b>Fortune</b> Stocke un sort qu’il connaît (même temporairement) dans un objet [1 MAIN] ou [2 MAINS] qui devient [Occulte] s’il ne l’était pas déjà.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Contact facile</b></td>
+    <td><i>« Vous n’êtes pas obligés de tout me dire. »</i>.</br>
+        <b>Avantages</b> +1 CHA ; Ses interlocuteurs se livrent plus facilement à l’acteur sans qu’il ait à y mettre beaucoup d’efforts.</br>
+        <b>Soutien</b> -1 DGT aux Attaques psychiques adverses.</br>
+        <b>Fortune</b> Relève automatiquement un défi de CHA.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Contrat intéressé</b></td>
+    <td><i>« Ils m’ont dit de continuer, encore et encore. »</i>.</br>
+        <b>Avantages</b> +2 RES ; Le personnage a des contacts plus ou moins bien intentionnés qui le suivent.</br>
+        <b>Soutien</b> Permet de briser l'objet utilisé lors d’une Attaque pour doubler ses DGT.</br>
+        <b>Fortune</b> +5 END, -5 RAI.</td>
+  </tr>
+
+  <tr>
+    <td><b>挙 Croyant dévoué</b></td>
+    <td><i>« Si ces abominations extérieures existent bel et bien, je le prend comme preuve que quelque part, les kamis veillent sur nous. »</i>.</br>
+        <b>Action - Confesser (1∨ ; Spirituelle)</b> L’acteur demande pardon pour les péchés de l’humanité qui la pousse à souffrir malgré tous les sacrifices, galvanisant ses alliés à venir à bout du mal qui les menace. Cette activité fonctionne comme Prier, excepter que l’acteur perd 3 RAI et rend 2 END.</br>
+        <b>Fortune</b> Relève automatiquement un défi de KAR.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Déjà condamné</b></td>
+    <td><i>« Si je dois partir bientôt, autant vous aider. »</i>.</br>
+        <b>Avantages</b> -2 KAR, -1 au niveau de danger pour chaque Malédiction ; L’acteur comprend les tenants et les aboutissants de certaines malédictions.</br>
+        <b>Soutien</b> +1 PRÉCISION si l'acteur est accablé par une Malédiction.</br>
+        <b>Fortune</b> L’acteur lève une Malédiction qui accable quelqu’un d’autre pour la subir.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Détermination profonde</b></td>
+    <td><i>« J’ai presque toutes les clés pour arrêter tout ça. »</i>.</br>
+        <b>Avantages</b> +2 SAV, -1 à toutes les autres STAT ; L’esprit de l’acteur est impénétrable, même par les astuces les plus obscures.</br>
+        <b>Soutien</b> -1 DGT aux Attaques primordiales adverses.</br>
+        <b>Fortune</b> Remplace ce talent par un autre (comme s’il prenait un niveau).</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 En fuite</b></td>
+    <td><i>« Un dernier coup d’œil par dessus mon épaule. »</i>.</br>
+        <b>Avantages</b> +2 DEX, -1 à toutes les autres STAT ; L’acteur glisse des entraves comme un serpent et court sans se fatiguer.</br>
+        <b>Soutien</b> Permet de Fuir depuis la ligne de front sans dépenser d'action.</br>
+        <b>Fortune</b> Remplace ce talent par un autre (comme s’il prenait un niveau).</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Entraînement physique</b></td>
+    <td><i>« Je n’y peux rien, ça m’aide à réfléchir. »</i>.</br>
+        <b>Avantages</b> +1 PUI ; L’acteur possède une force brute remarquable qui peut l’aider à déplacer de lourdes charges aussi bien qu’à lutter contre les forces hors de son contrôle.</br>
+        <b>Soutien</b> +1 DGT aux Attaques physiques [X É] alliées.</br>
+        <b>Fortune</b> Relève automatiquement un défi de PUI.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Études anthropologiques</b></td>
+    <td><i>« Leurs croyances sont fascinantes quand on connaît la vérité. »</i>.</br>
+        <b>Avantages</b> +1 SAV ; L’acteur a une connaissance étendue des traditions rurales.</br>
+        <b>Soutien</b> +1 PRÉCISION si un acteur a obtenu un succès cinématique pour Raisonner lors de la confrontation.</br>
+        <b>Fortune</b> Relève automatiquement un défi de SAV.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Expertise artistique</b></td>
+    <td><i>« Les lignes d’une esquisse valent bien mille mots. »</i>.</br>
+        <b>Avantages</b> +1 PER ; Le personnage a un certain sens du détail lorsqu’il étudie des objets d’art.</br>
+        <b>Soutien</b> +2 DGT si la PRÉCISION de l'Attaque est basée sur la PER.</br>
+        <b>Fortune</b> Relève automatiquement un défi de PER.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Familiarité technique</b></td>
+    <td><i>« L’avenir de notre combat est dans nos machines. »</i>.</br>
+        <b>Avantages</b> +1 à l'application Technologique ; L’acteur est un bricoleur hors pair.</br>
+        <b>Soutien</b> Permet de remplacer les DGT [X A] par des DGT [X É].</br>
+        <b>Fortune</b> Relève automatiquement un défi sur l’application Technologique.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Haine palpable</b></td>
+    <td><i>« Je ne vous croirais pas même si je le voulais. »</i>.</br>
+        <b>Avantages</b> -1 CHA, +1 DGT contre les entités humaines ; L’acteur se méfie tant de ses congénères qu’il est très difficile à tromper.</br>
+        <b>Soutien</b> -1 RÉSISTANCE adverse (aucun effet si 0).</br>
+        <b>Fortune</b> Relève automatiquement un défi sur l’application Humaine.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Hantise antique</b></td>
+    <td><i>« Je sens son souffle sur ma nuque. »</i>.</br>
+        <b>Avantages</b> +1 à une STAT aléatoire et -1 END/RAI pour chaque Malédiction ; L’acteur effraie les entités les plus sensibles au monde invisible.</br>
+        <b>Soutien</b> Les entités spirituelles comptent comme ayant un point d'ancrage en moins.</br>
+        <b>Fortune</b> L’acteur remplace une affliction subie par une autre d’un autre type (Symptôme physique devient Symptôme mental, Symptôme mental devient Malédiction, et Malédiction devient Symptôme physique).</td>
+  </tr>
+
+  <tr>
+    <td><b>挙 Immortel vulnérable</b></td>
+    <td><i>« Bien sûr que je vais tenir. Pas besoin d’être la cible d’un culte pour connaître le pire, il suffit de rentrer à la maison. »</i>.</br>
+        <b>Action - Endurer (0 ; Défensive)</b> L’acteur refuse de partir, s’attachant bêtement et simplement à la vie comme une tique s’attache à la jambe d’un voyageur. Si une Frappe, une Incantation, un Lancer ou une Projection devrait réduire l’acteur à 0 END ou 0 RAI, il peut immédiatement utiliser cette activité en réaction pour éviter de tomber sous 1 et contracter un Symptôme (physique dans le cas de l’END, mental dans le cas de la RAI). L’acteur ne peut pas utiliser cette activité s’il a déjà un Symptôme (quel qu’il soit).</br>
+        <b>Fortune</b> +2 END, +2 RAI.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Improvisation</b></td>
+    <td><i>« Je ne triche pas, je suis juste prévoyant. »</i>.</br>
+        <b>Avantages</b> +1 KAR ; L’acteur n’est jamais à court de petites babioles utiles.</br>
+        <b>Soutien</b> +2 DGT aux Lancers avec des objets non-[Solide].</br>
+        <b>Fortune</b> Relance le dé d’un défi de statistique raté.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Instinct d'autoconservation</b></td>
+    <td><i>« Aucune sur-analyse, je ne veux juste pas mourir. »</i>.</br>
+        <b>Avantages</b> +1 DEX ; L’acteur a des réflexes logiques plus rapides que la moyenne, lui permettant de réagir plus vite à l’inattendu.</br>
+        <b>Soutien</b> -1 DGT aux Attaques physiques [Zone] adverses.</br>
+        <b>Fortune</b> Relève automatiquement un défi de DEX.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Irezumi</b></td>
+    <td><i>« Plus qu’une marque d’appartenance, c’est une mission. »</i>.</br>
+        <b>Avantages</b> +1 à l'application Humaine ; Les autorités sont plus laxistes par rapport aux agissements de l’acteur.</br>
+        <b>Soutien</b> +2 DGT aux Attaques physiques [X A] alliées.</br>
+        <b>Fortune</b> Relève automatiquement un défi sur l’application Humaine.</td>
+  </tr>
+
+  <tr>
+    <td><b>挙 Magicien corrompu</b></td>
+    <td><i>« Ce n’est pas si mal. Je prend, ils prennent. Tous les accords sont perdant-perdant quand on y réfléchi. »</i>.</br>
+        <b>Action - Manifester (2∨ ; Offensive)</b> L’acteur rassemble joint ses forces à celles du monde invisible pour formuler un sortilège sans en payer le prix. Il Incante un sortilège [Supplique] qu’il connaît en remplaçant son prix par le gain d’une Malédiction aléatoire. Il ne peut pas utiliser cette activité s’il est déjà accablé par une Malédiction.</br>
+        <b>Fortune</b> Lève une Malédiction qui accable l’acteur.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Organisation irréprochable</b></td>
+    <td><i>« Sans moi, vous oublieriez vos chaussures. »</i>.</br>
+        <b>Avantages</b> +1 Espace ; L’acteur est plus efficace lorsqu’il s’agit de fouiller un lieu en désordre pour y trouver des objets censément perdus.</br>
+        <b>Soutien</b> Permet d'Intéragir deux fois sans dépenser d'action.</br>
+        <b>Fortune</b> L’acteur trouve un objet d’un coût de 2 RES ou moins qui se brise 24 heures après l’utilisation de cette Fortune.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Popularité grandissante</b></td>
+    <td><i>« Être une idole, c’est beaucoup de travail. »</i>.</br>
+        <b>Avantages</b> +1 CHA, +1 RES ; L’acteur est reconnu dans la rue, pour le meilleur et pour le pire.</br>
+        <b>Soutien</b> +2 à la marge de réussite des défis opposés.</br>
+        <b>Fortune</b> Relève automatiquement un défi de CHA.</td>
+  </tr>
+
+  <tr>
+    <td><b>挙 Porte-lueur</b></td>
+    <td><i>« Restez devant, je m’occupe d’éclairer les alentours. Si vous voyez quoi que ce soit, criez. »</i>.</br>
+        <b>Action - Éblouir (1∨ ; Offensive)</b> L’acteur utilise une [Lumière] qu’il tient en main pour destabiliser une entité en ligne de front adverse. Chacun doit relever un défi opposé de PER. Si l’acteur a l’ascendant, sa cible voit la PRÉCISION de sa prochaine Attaque physique réduite de 1. Les effets de cette activité ne se cumulent pas entre eux et n’opèrent pas contre une entité qui ne se sert pas d’une perception visuelle.</br>
+        <b>Fortune</b> Où qu’il soit, l’acteur trouve un objet [Lumière] qui coûte 3 RES ou moins.</td>
+  </tr>
+  
+  <tr>
+    <td><b>姿 Pression familiale</b></td>
+    <td><i>« L’échec n’est pas une option. »</i>.</br>
+        <b>Avantages</b> +1 RAI à chaque défi de statistique relevé avec succès, -1 à chaque échec ; L’acteur est moins enclin à perdre pied lorsqu’il est soumis à une pression extrême.</br>
+        <b>Soutien</b> +1 RAI si l'Attaque ignore la RÉSISTANCE adverse.</br>
+        <b>Fortune</b> Un défi relevé avec succès devient un succès cinématique, ou un défi échoué devient un succès.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Prudence maladive</b></td>
+    <td><i>« Impossible d’échouer si je ne m’y risque pas. »</i>.</br>
+        <b>Avantages</b> -1 à la difficulté des sauvegardes d'état ; L’acteur est constamment sur le qui vive, le talon levé, prêt à partir.</br>
+        <b>Soutien</b> +2 PRÉCISION des [Arme], -1 DGT.</br>
+        <b>Fortune</b> L’acteur annule entièrement les effets d’un échec, que ce soit sur un défi de statistique, une sauvegarde d’état ou une Attaque.</td>
+  </tr>
+
+  <tr>
+    <td><b>挙 Psychopompe zélé</b></td>
+    <td><i>« Pourquoi ils s’évertuent à revenir ? Certains ont fait leur temps, je vais les aider à l’accepter. »</i>.</br>
+        <b>Action - Déchirer (2∧ ; Offensive)</b> L’acteur porte une Attaque avec une [Arme] dotée d’une Frappe qu’il tient en main contre un ennemi immatériel et visible sur la ligne de front adverse. Cette attaque inflige la moitié des DGT habituels (arrondis à l’inférieur, minimum 1).</br>
+        <b>Fortune</b> Annule entièrement les DGT infligés à l’acteur par l’Attaque d’une entité spirituelle.</td>
+  </tr>
+  
+  <tr>
+    <td><b>挙 Rat de bibliothèque</b></td>
+    <td><i>« C’est affolant tout le savoir à côté duquel les gens passent sous prétexte que lire un livre prend trop de temps. »</i>.</br>
+        <b>Action - Parcourir (2∨ ; Coopérative)</b> L’acteur parcours intelligemment les pages d’un livre pour en tirer les informations les plus croustillantes. Il peut consulter un objet [Livre] plus rapidement, mais n’en tire les avantages que jusqu’à la fin de la confrontation et ce même s'il bénéficie déjà des effets d'un autre [Livre].</br>
+        <b>Fortune</b> Ignore une perte de STAT permanente.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Sigils cryptiques</b></td>
+    <td><i>« Rien qu’une marque de naissance. »</i>.</br>
+        <b>Avantages</b> +1 SAV, +1 END à chaque SORT utilisé ; L’acteur porte des marques ésotériques facilement reconnaissables par les initiés.</br>
+        <b>Soutien</b> +2 PRÉCISION des sortilèges.</br>
+        <b>Fortune</b> -5 END, +5 RAI.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Simple piété</b></td>
+    <td><i>« Une prière ne fait jamais de mal à personne. »</i>.</br>
+        <b>Avantages</b> +1 KAR, le niveau de danger n’augmente pas lorsque l’acteur ne sait pas où il est ; L’acteur échange plus facilement avec les croyants, humains ou non.</br>
+        <b>Soutien</b> +2 DGT Miraculeux si l'Attaque n'ignore pas la RÉSISTANCE adverse.</br>
+        <b>Fortune</b> Relève automatiquement un défi de KAR.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Solitude consommée</b></td>
+    <td><i>« Allez-y, je ne bougerais pas. »</i>.</br>
+        <b>Avantages</b> +1 PER ; L’acteur résiste très bien à l’isolation, qu’elle soit volontaire ou non.</br>
+        <b>Soutien</b> +1 à la STAT la plus faible.</br>
+        <b>Fortune</b> Traite immédiatement un Symptôme mental.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Sorcellerie en dilettante</b></td>
+    <td><i>« C’est comme lire le journal intime d’une divinité. »</i>.</br>
+        <b>Avantages</b> Obtient un grimoire personnel ([Livre][Occulte][UNIQUE][1 MAIN] Après consultation, +1 à l'application Extérieure et révèle 1 sortilège (choisi à l'obtention) pendant une journée) ; L’acteur repère aisément le sens caché des textes.</br>
+        <b>Soutien</b> Permet d'Incanter depuis la ligne de front alliée.</br>
+        <b>Fortune</b> Annule entièrement les effets d’une Attaque portée par le biais d’un sortilège.</td>
+  </tr>
+
+  <tr>
+    <td><b>挙 Stratège réactif</b></td>
+    <td><i>« Fais ce que je te dis, on a pas le temps pour tes questions ! »</i>.</br>
+        <b>Action - Permuter (1 ; Coopérative)</b> L’acteur échange de place avec une autre entité alliée. Dans les faits, il passe d’une ligne du camp alliée à une autre, et l’entité désignée fait l’inverse.</br>
+        <b>Fortune</b> Relève automatiquement un défi de PER visant à remarquer une menace directe.</td>
+  </tr>
+
+  <tr>
+    <td><b>挙 Térapeuthe amateur</b></td>
+    <td><i>« Prends ma main et regarde moi dans les yeux. Tu es là avec moi, c’est tout ce qui compte pour l’instant. Bats-toi pour ça. »</i>.</br>
+        <b>Action - Rassurer (2∨ ; Coopérative)</b> L’acteur prend toute l’attention d’une entité consentante pour la calmer et l’aider à se concentrer sur le moment présent. Il désigne un acteur sur la ligne arrière alliée qui souffre d’un Symptôme mental qui ne subit plus aucun effet de ce Symptôme jusqu’à la fin de la confrontation.</br>
+        <b>Fortune</b> Quelque soit sa RAI actuelle, l’acteur réussit une sauvegarde de RAI.</td>
+  </tr>
+  
+  <tr>
+    <td><b>姿 Titre de Yakuza</b></td>
+    <td><i>« Vous avez tout intérêt à m’ignorer. »</i>.</br>
+        <b>Avantages</b> +2 CHA, peut se procurer des objets [Illicite], +1 au niveau de danger si le CHA n'est pas sollicité ; L'acteur est familier avec le monde criminel.</br>
+        <b>Soutien</b> +1 PRÉCISION si l'Attaque est portée avec un objet [Illicite].</br>
+        <b>Fortune</b> Réussit automatiquement une Attaque, ou perd ce talent et gagne +2 RES.</td>
+  </tr>
+
+  <tr>
+    <td><b>姿 Vision extrasensorielle</b></td>
+    <td><i>« Certains disent en avoir vu, moi je les vois sans arrêt. »</i>.</br>
+        <b>Avantages</b> +1 SAV ; L’acteur ressent l’invisible d’une façon qu’il est incapable de contrôler ou de sollicier.</br>
+        <b>Soutien</b> +2 à l'application Spirituelle pour Exorciser.</br>
+        <b>Fortune</b> Relève automatiquement un défi sur l’application Spirituelle.</td>
+  </tr>
+</table>
+
+</body>
+</html>
