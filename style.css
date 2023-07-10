@@ -1,1 +1,13 @@
-u
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #000000;
+  background-image: url('https://i.ibb.co/kQXftFn/Bande1.png');
+  background-repeat: repeat;
+  color: #FFFFFF;
+  font-family: 'Roboto Slab', serif;
+}
+a {
+  color: #FFFFFF;
+}
