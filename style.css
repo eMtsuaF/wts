@@ -25,19 +25,6 @@ a {
   background-color: #FFFFFF;
 }
 
-#inputNom {
-  margin-left:15%;
-  width:12%;
-}
-#inputTrait {
-  margin-left:2%;
-  width:13%;
-}
-#inputDesc {
-  margin-left:2%;
-  width:41%;
-}
-
 #myTable {
   border-collapse: collapse;
   margin-left:auto;
