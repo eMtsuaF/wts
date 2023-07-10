@@ -4,8 +4,59 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 <style>
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #000000;
+  background-image: url('https://i.ibb.co/kQXftFn/Bande1.png');
+  background-repeat: repeat;
+  color: #FFFFFF;
+  font-family: 'Roboto Slab', serif;
+}
+a {
+  color: #FFFFFF;
+}
+
+.input {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #FFFFFF;
+  margin-bottom: 12px;
+}
+.occulte {
+  background-color: #FFFFFF;
+}
+
+#myTable {
+  border-collapse: collapse;
+  margin-left:auto;
+  margin-right:auto;
+  width: 70%;
+  border: 1px solid #BFBFBF;
+  font-size: 18px;
+}
+#myTable th, #myTable td {
+  text-align: center;
+  padding: 12px;
+}
+#myTable th, #myTable td:first-child {
+  text-align: left;
+}
+#myTable tr {
+  border-bottom: 1px solid #BFBFBF;
+}
+#myTable tr.header {
+  background-color: #3F3F3F;
+}
+#myTable tr:hover {
+  background-color: #808080;
+  color: #000000;
+}
 #inputNom {
   margin-left:15%;
   width:12%;
