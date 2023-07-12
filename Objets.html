@@ -187,7 +187,7 @@ function filtreDesc() {
   <tr>
     <td><b>Attelle</b></td>
     <td>[Médicament][2/1 RES][CORPS]</td>
-    <td><i>« On se disait bien que ça ne t’arrêterait pas, même si au fond, on l’espérait. »</i> Prescrite par un médecin ou vendu dans la pharmacie d’un hôpital, une attelle permet d’annuler la perte de STAT due à un Symptôme physique d’Os brisé tant qu’elle est portée. Une attelle placée sur l’articulation du bras peut rendre la main de ce bras inutilisable, à la discrétion du maître de jeu.</td>
+    <td><i>« On se disait bien que ça ne t’arrêterait pas, même si au fond, on l’espérait. »</i> Prescrite par un médecin ou vendu dans la pharmacie d’un hôpital, une attelle permet de neutraliser les effets d'un symptôme [Physique][Fracture][Mineur] tant qu’elle est portée. Une attelle placée sur l’articulation du bras peut rendre la main de ce bras inutilisable, à la discrétion du maître de jeu.</td>
   </tr>
 
   <tr>
@@ -205,7 +205,7 @@ function filtreDesc() {
   <tr>
     <td><b>Bandage</b></td>
     <td>[Consommable][Médicament][1/0 RES][1 MAIN]</td>
-    <td><i>« Même hors d’une trousse de premiers secours, un bandage est un allié de choix pour arrêter une hémorragie ou empêcher une plaie de s’infecter. »</i> Il peut être utilisé pour traiter un Symptôme mineur de Blessure. Un bandage est à usage unique.</td>
+    <td><i>« Même hors d’une trousse de premiers secours, un bandage est un allié de choix pour arrêter une hémorragie ou empêcher une plaie de s’infecter. »</i> Il peut être utilisé pour traiter un symptôme [Physique][Plaie][Mineur].</td>
   </tr>
 
   <tr>
@@ -269,7 +269,7 @@ function filtreDesc() {
   <tr>
     <td><b>Bouteille de vin</b></td>
     <td>[Consommable][Nourriture][2/1 RES][1 MAIN]</td>
-    <td><i>« Laisse-moi. Si tu savais ce que j’ai vu tu ne me jugerais pas autant, et même comme ça je m’en moquerais, juge-moi autant que tu veux. »</i> +2 END, +2 RAI, inflige le Symptôme Migraine.</td>
+    <td><i>« Laisse-moi. Si tu savais ce que j’ai vu tu ne me jugerais pas autant, et même comme ça je m’en moquerais, juge-moi autant que tu veux. »</i> +2 END, +2 RAI, inflige un symptôme mineur de Maux de tête.</td>
   </tr>
 
   <tr>
@@ -320,7 +320,7 @@ function filtreDesc() {
     <td>[Arme][Charge/2][Illicite][Solide][4/4 RES][2 MAINS]</td>
     <td><i>« Il est entré chez nous. Il savait qui j’étais. Je suis désolé officier, je ne peux pas me rendre maintenant. »</i> Une carabine militaire charge 1 Tir par Balle standard dépensée.</br>
         • Frappe [Physique][PUI+8][4 É]</br>
-        • Tir [Physique][PER+8][15 P] ; Le porteur gagne le Symptôme Fatigué.</td>
+        • Tir [Physique][PER+8][15 P] ; Le porteur contracte un symptôme mineur de Fatigue physique.</td>
   </tr>
 
   <tr>
@@ -476,7 +476,7 @@ function filtreDesc() {
     <td>[Arme][Charge/2][Illicite][Solide][5/5 RES][2 MAINS]</td>
     <td><i>« Je ne suis pas contre la chasse ouverte, tant que le gibier en vaut la peine. »</i> Un fusil de chasse charge 1 Tir par Balle standard dépensée.</br>
         • Frappe [Physique][PUI+9][3 É]</br>
-        • Tir [Physique][PER+9][14 P] ; Le porteur gagne le Symptôme Fatigué.</td>
+        • Tir [Physique][PER+9][14 P] ; Le porteur contracte un symptôme mineur de Fatigue physique.</td>
   </tr>
 
   <tr>
@@ -484,7 +484,7 @@ function filtreDesc() {
     <td>[Arme][Charge/2][Illicite][Solide][6/6 RES][2 MAINS]</td>
     <td><i>« Je ne suis pas contre la chasse ouverte, tant que le gibier en vaut la peine. »</i> Un fusil de précision charge 1 Tir par Balle standard dépensée.</br>
         • Frappe [Physique][PUI+8][5 É]</br>
-        • Tir [Physique][PER+8][30 P] ; Le porteur gagne le Symptôme Fatigué.</td>
+        • Tir [Physique][PER+8][30 P] ; Le porteur contracte un symptôme mineur de Fatigue physique.</td>
   </tr>
 
   <tr>
@@ -517,7 +517,7 @@ function filtreDesc() {
     <td><b>Hache d’incendie</b></td>
     <td>[Arme][Solide][2/1 RES][2 MAINS]</td>
     <td><i>« Pour une fois, l’alarme de l’école sonnera pour une bonne raison. Un tueur sanguinaire avec une hache à la main, ça fait toujours sensation. »</i> +2 PUI aux défis visant à briser un objet.</br>
-        • Frappe [Physique][PUI+6][6 A] ; Le porteur gagne le Symptôme Fatigué.</br>
+        • Frappe [Physique][PUI+6][6 A] ; Le porteur contracte un symptôme mineur de Fatigue physique.</br>
         • Lancer [Physique][DEX+6][3 A]</td>
   </tr>
 
@@ -539,7 +539,7 @@ function filtreDesc() {
     <td><b>Katana</b></td>
     <td>[Arme][Solide][5/3 RES][2 MAINS]</td>
     <td><i>« La toilette est à la geisha ce que le katana est au samouraï : une preuve de légitimité. Ne porte aucun des deux sans respecter le poids qui les accompagne. »</i></br>
-        • Frappe [Physique][DEX+7][9 A] ; Le porteur gagne le Symptôme Fatigué.</td>
+        • Frappe [Physique][DEX+7][9 A] ; Le porteur contracte un symptôme mineur de Fatigue physique.</td>
   </tr>
 
   <tr>
@@ -688,7 +688,7 @@ function filtreDesc() {
     <td><b>Pelle</b></td>
     <td>[Arme][Solide][3/1 RES][2 MAINS]</td>
     <td><i>« Tu as dit que tu voulais enterrer le problème. Il est où ce salopard ? »</i></br>
-        • Frappe [Physique][PUI+6][6 É] ; Le porteur gagne le Symptôme Fatigué.</br>
+        • Frappe [Physique][PUI+6][6 É] ; Le porteur contracte un symptôme mineur de Fatigue physique.</br>
         • Lancer [Physique][PUI+6][5 É] ; Le porteur ne peut pas Lancer cet objet depuis la ligne arrière.</td>
   </tr>
 
@@ -804,7 +804,7 @@ function filtreDesc() {
     <td><b>Scie à os</b></td>
     <td>[Arme][2/1 RES][1 MAIN]</td>
     <td><i>« Quelques cours pratiques ne feraient pas de mal aux futurs chirurgiens, encore faut-il trouver des volontaires. »</i></br>
-        • Frappe [Physique][SAV+7][5 A] ; Le porteur gagne le Symptôme Fatigué.</br>
+        • Frappe [Physique][SAV+7][5 A] ; Le porteur contracte un symptôme mineur de Fatigue physique.</br>
         • Lancer [Physique][DEX+7][2 A]</td>
   </tr>
 
@@ -852,7 +852,7 @@ function filtreDesc() {
   <tr>
     <td><b>Tome flétri</b></td>
     <td>[Livre][Occulte][3/3 RES][1 MAIN]</td>
-    <td><i>« La couverture de ce recueilles de prières démentes à la pourriture est recouverte de sceaux de vulnérabilités… et est faite avec des morceaux maladroitement cousus de la peau d’un mammifère. »</i> Après consultation, révèle le SORT Flétrissure fulgurante au porteur pendant une journée. <span class="occulte">Après consultation, le porteur gagne le Symptôme Mutilé (2 MAINS).</span></td>
+    <td><i>« La couverture de ce recueilles de prières démentes à la pourriture est recouverte de sceaux de vulnérabilités… et est faite avec des morceaux maladroitement cousus de la peau d’un mammifère. »</i> Après consultation, révèle le SORT Flétrissure fulgurante au porteur pendant une journée. <span class="occulte">Après consultation, le porteur contract un symptôme mineur de Membre mutilé (2 mains).</span></td>
   </tr>
 
   <tr>
@@ -892,14 +892,14 @@ function filtreDesc() {
   <tr>
     <td><b>Trousse médicale</b></td>
     <td>[Consommable][Médicament][4/2 RES][2 MAINS]</td>
-    <td><i>« Un vrai hôpital portable. Plus qu’à se blesser gravement et ce sera une acquisition rentable. »</i> Permet de traiter un Symptôme physique majeur et deux Symptômes physiques mineurs avant d’être entièrement consommée.</td>
+    <td><i>« Un vrai hôpital portable. Plus qu’à se blesser gravement et ce sera une acquisition rentable. »</i> Permet de traiter un symptôme [Physique][Majeur] et deux symptômes [Physique][Mineur] avant d’être entièrement consommée.</td>
   </tr>
 
   <tr>
     <td><b>Vieille batte</b></td>
     <td>[Arme][1/0 RES][2 MAINS]</td>
     <td><i>« Une batte d’entraînement que tous les pères passionés offrent à leur fils, qu’il en veuille ou non. La lanière enroulée sur la prise se décolle déjà. »</i></br>
-        • Frappe [Physique][PUI+7][4 É] ; Le porteur gagne le Symptôme Fatigué.</br>
+        • Frappe [Physique][PUI+7][4 É] ; Le porteur contracte un symptôme mineur de Fatigue physique.</br>
         • Lancer [Physique][DEX+7][4 É]</td>
   </tr>
 
