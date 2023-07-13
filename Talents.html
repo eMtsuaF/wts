@@ -125,7 +125,7 @@ function filtreDesc() {
     <td><i>« Méditez tant que vous voulez, ça me suffira. »</i>.</br>
         <b>Avantages</b> +1 cigarette chaque jour, mais les cigarettes consommées ne rendent plus de RAI ; L’acteur a développé une accoutumance à certaines drogues sans même le savoir.</br>
         <b>Soutien</b> +1 RAI si l'Attaque réussit, -1 sinon.</br>
-        <b>Fortune</b> Traite immédiatement un Symptôme physique.</td>
+        <b>Fortune</b> Traite immédiatement un symptôme [Physique] qui affecte l'acteur.</td>
   </tr>
 
   <tr>
@@ -140,14 +140,14 @@ function filtreDesc() {
     <td><b>姿 Aisance naturelle</b></td>
     <td><i>« Quelque chose dans l’air m’apaise. »</i>.</br>
         <b>Avantages</b> +1 aux applications Minérale et Végétale ; L’acteur a un meilleur instinct dans les milieux naturels.</br>
-        <b>Soutien</b> +2 DGT contre les entités minérales et végétales.</br>
+        <b>Soutien</b> +2 DGT contre les entités [C:Minéral] et [C:Végétal].</br>
         <b>Fortune</b> Relève automatiquement un défi opposé à une entité minérale ou végétale.</td>
   </tr>
   
   <tr>
     <td><b>挙 Ami des animaux</b></td>
     <td><i>« Tout est dans le regard avec eux, il suffit d’être ferme. »</i>.</br>
-        <b>Activité - Dresser (2∧ ; Défensive)</b> L’acteur joue de son expérience pour calmer une entité animale troublée. Il peut relever un défi de CHA/Animale pour empêcher une entité animale de porter une Attaque à la prochaine scène d’actions adverses. S’il relève ce défi avec succès trois fois dans la même confrontation, l’entité ciblée quitte le camp adverse.</br>
+        <b>Activité - Dresser (2∧ ; Défensive)</b> L’acteur joue de son expérience pour calmer un animal troublé. Il peut relever un défi de CHA/Animale pour empêcher une entité [E:Animal] de porter une Attaque à la prochaine scène d’actions adverses. S’il relève ce défi avec succès trois fois dans la même confrontation, l’entité ciblée quitte le camp adverse.</br>
         <b>Fortune</b> Relève automatiquement un défi sur l’application Animale.</td>
   </tr>
   
@@ -170,7 +170,7 @@ function filtreDesc() {
     <td><b>姿 Bonne fortune</b></td>
     <td><i>« Ne soyez pas jaloux de mon talent. »</i>.</br>
         <b>Avantages</b> +1 KAR ; L’acteur connaît souvent des circonstances avantageuses à sa réussite.</br>
-        <b>Soutien</b> Permet d'éviter de contracter un unique Symptôme (une fois par controntation).</br>
+        <b>Soutien</b> Permet d'éviter de contracter un unique symptôme (une fois par controntation).</br>
         <b>Fortune</b> Un échec cinématique devient un succès cinématique.</td>
   </tr>
 
@@ -200,15 +200,15 @@ function filtreDesc() {
   <tr>
     <td><b>姿 Chasse acharnée</b></td>
     <td><i>« Si on doit se battre pour ne pas disparaître, j’en suis. »</i>.</br>
-        <b>Avantages</b> +1 PRÉCISION et +1 DGT à la première Attaque à chaque confrontation, -1 END max et -1 RAI max ; L’acteur a l’œil pour deviner qu’une entité Extérieure tente de se faire passer pour autre chose.</br>
+        <b>Avantages</b> +1 PRÉCISION et +1 DGT à la première Attaque à chaque confrontation, -1 END max et -1 RAI max ; L’acteur a l’œil pour deviner qu’une entité extérieure tente de se faire passer pour autre chose.</br>
         <b>Soutien</b> -1 PRÉCISION, +2 DGT.</br>
-        <b>Fortune</b> Relève automatiquement un défi opposé contre une entité Extérieure.</td>
+        <b>Fortune</b> Relève automatiquement un défi opposé contre une entité extérieure.</td>
   </tr>
 
   <tr>
     <td><b>挙 Chirurgien amateur</b></td>
     <td><i>« Concentre-toi sur ta respiration, le pronostic vital n’est pas engagé, tout va bien se passer. »</i>.</br>
-        <b>Activité - Garrotter (2∨ ; Coopérative)</b> L’acteur utilise quelques outils rustiques à sa disposition pour rafistoler une entité consentante. Il désigne un acteur sur la ligne arrière alliée qui souffre d’un Symptôme physique qui ne subit plus aucun effet de ce Symptôme jusqu’à la fin de la confrontation.</br>
+        <b>Activité - Garrotter (2∨ ; Coopérative)</b> L’acteur utilise quelques outils rustiques à sa disposition pour rafistoler une entité consentante. Il désigne un acteur sur la ligne arrière alliée qui souffre d’un symptôme [Physique] qui ne subit plus aucun effet de ce symptôme jusqu’à la fin de la confrontation.</br>
         <b>Fortune</b> Où qu’il soit, l’acteur trouve un objet [Médicament] qui coûte 3 RES ou moins.</td>
   </tr>
 
@@ -270,9 +270,9 @@ function filtreDesc() {
   <tr>
     <td><b>姿 Déjà condamné</b></td>
     <td><i>« Si je dois partir bientôt, autant vous aider. »</i>.</br>
-        <b>Avantages</b> -2 KAR, -1 au niveau de danger pour chaque Malédiction ; L’acteur comprend les tenants et les aboutissants de certaines malédictions.</br>
-        <b>Soutien</b> +1 PRÉCISION si l'entité est accablé par une Malédiction.</br>
-        <b>Fortune</b> L’acteur lève une Malédiction qui accable quelqu’un d’autre pour la subir.</td>
+        <b>Avantages</b> -2 KAR, -1 au niveau de danger pour chaque malédiction ; L’acteur comprend les tenants et les aboutissants de certaines malédictions.</br>
+        <b>Soutien</b> +1 PRÉCISION si l'entité est accablé par une malédiction.</br>
+        <b>Fortune</b> L’acteur lève une malédiction qui accable quelqu’un d’autre pour la subir.</td>
   </tr>
 
   <tr>
@@ -341,15 +341,15 @@ function filtreDesc() {
   <tr>
     <td><b>姿 Hantise antique</b></td>
     <td><i>« Je sens son souffle sur ma nuque. »</i>.</br>
-        <b>Avantages</b> +1 à une STAT aléatoire et -1 END/RAI pour chaque Malédiction ; L’acteur effraie les entités les plus sensibles au monde invisible.</br>
+        <b>Avantages</b> +1 à une STAT aléatoire et -1 END/RAI pour chaque malédiction ; L’acteur effraie les entités les plus sensibles au monde invisible.</br>
         <b>Soutien</b> Les entités spirituelles comptent comme ayant un point d'ancrage en moins.</br>
-        <b>Fortune</b> L’acteur remplace une affliction subie par une autre d’un autre type (Symptôme physique devient Symptôme mental, Symptôme mental devient Malédiction, et Malédiction devient Symptôme physique).</td>
+        <b>Fortune</b> L’acteur remplace une affliction subie par une autre d’un autre type (symptôme [Physique] devient symptôme [Psychique], symptôme [Psychique] devient malédiction, et malédiction devient symptôme [Physique]).</td>
   </tr>
 
   <tr>
     <td><b>挙 Immortel vulnérable</b></td>
     <td><i>« Bien sûr que je vais tenir. Pas besoin d’être la cible d’un culte pour connaître le pire, il suffit de rentrer à la maison. »</i>.</br>
-        <b>Activité - Endurer (0 ; Défensive)</b> L’acteur refuse de partir, s’attachant bêtement et simplement à la vie comme une tique s’attache à la jambe d’un voyageur. Si une Frappe, une Incantation, un Lancer ou une Projection devrait réduire l’acteur à 0 END ou 0 RAI, il peut immédiatement utiliser cette activité en réaction pour éviter de tomber sous 1 et contracter un Symptôme (physique dans le cas de l’END, mental dans le cas de la RAI). L’acteur ne peut pas utiliser cette activité s’il a déjà un Symptôme (quel qu’il soit).</br>
+        <b>Activité - Endurer (0 ; Défensive)</b> L’acteur refuse de partir, s’attachant bêtement et simplement à la vie comme une tique s’attache à la jambe d’un voyageur. Si une Frappe, une Incantation, un Lancer ou une Projection devrait réduire l’acteur à 0 END ou 0 RAI, il peut immédiatement utiliser cette activité en réaction pour éviter de tomber sous 1 et contracter un symptôme ([Physique] dans le cas de l’END, [Psychique] dans le cas de la RAI). L’acteur ne peut pas utiliser cette activité s’il a déjà un symptôme (quel qu’il soit).</br>
         <b>Fortune</b> +2 END, +2 RAI.</td>
   </tr>
 
@@ -380,8 +380,8 @@ function filtreDesc() {
   <tr>
     <td><b>挙 Magicien corrompu</b></td>
     <td><i>« Ce n’est pas si mal. Je prend, ils prennent. Tous les accords sont perdant-perdant quand on y réfléchi. »</i>.</br>
-        <b>Activité - Manifester (2∨ ; Offensive)</b> L’acteur rassemble joint ses forces à celles du monde invisible pour formuler un sortilège sans en payer le prix. Il Incante un sortilège [Supplique] qu’il connaît en remplaçant son prix par le gain d’une Malédiction aléatoire. Il ne peut pas utiliser cette activité s’il est déjà accablé par une Malédiction.</br>
-        <b>Fortune</b> Lève une Malédiction qui accable l’acteur.</td>
+        <b>Activité - Manifester (2∨ ; Offensive)</b> L’acteur rassemble joint ses forces à celles du monde invisible pour formuler un sortilège sans en payer le prix. Il Incante un sortilège [Supplique] qu’il connaît en remplaçant son prix par le gain d’une malédiction aléatoire. Il ne peut pas utiliser cette activité s’il est déjà accablé par une malédiction.</br>
+        <b>Fortune</b> Lève une malédiction qui accable l’acteur.</td>
   </tr>
 
   <tr>
@@ -420,7 +420,7 @@ function filtreDesc() {
     <td><b>挙 Psychopompe zélé</b></td>
     <td><i>« Pourquoi ils s’évertuent à revenir ? Certains ont fait leur temps, je vais les aider à l’accepter. »</i>.</br>
         <b>Activité - Déchirer (2∧ ; Offensive)</b> L’acteur porte une Attaque avec une [Arme] dotée d’une Frappe qu’il tient en main contre un ennemi immatériel et visible sur la ligne de front adverse. Cette attaque inflige la moitié des DGT habituels (arrondis à l’inférieur, minimum 1).</br>
-        <b>Fortune</b> Annule entièrement les DGT infligés à l’acteur par l’Attaque d’une entité spirituelle.</td>
+        <b>Fortune</b> Annule entièrement les DGT infligés à l’acteur par l’Attaque d’une entité [C:Spirituel].</td>
   </tr>
   
   <tr>
@@ -451,7 +451,7 @@ function filtreDesc() {
     <td><i>« Allez-y, je ne bougerais pas. »</i>.</br>
         <b>Avantages</b> +1 PER ; L’acteur résiste très bien à l’isolation, qu’elle soit volontaire ou non.</br>
         <b>Soutien</b> +1 à la STAT la plus faible.</br>
-        <b>Fortune</b> Traite immédiatement un Symptôme mental.</td>
+        <b>Fortune</b> Traite immédiatement un symptôme [Psychique] qui affecte l'acteur.</td>
   </tr>
 
   <tr>
@@ -472,7 +472,7 @@ function filtreDesc() {
   <tr>
     <td><b>挙 Térapeuthe amateur</b></td>
     <td><i>« Prends ma main et regarde moi dans les yeux. Tu es là avec moi, c’est tout ce qui compte pour l’instant. Bats-toi pour ça. »</i>.</br>
-        <b>Activité - Rassurer (2∨ ; Coopérative)</b> L’acteur prend toute l’attention d’une entité consentante pour la calmer et l’aider à se concentrer sur le moment présent. Il désigne un acteur sur la ligne arrière alliée qui souffre d’un Symptôme mental qui ne subit plus aucun effet de ce Symptôme jusqu’à la fin de la confrontation.</br>
+        <b>Activité - Rassurer (2∨ ; Coopérative)</b> L’acteur prend toute l’attention d’une entité consentante pour la calmer et l’aider à se concentrer sur le moment présent. Il désigne un acteur sur la ligne arrière alliée qui souffre d’un symptôme [Psychique] qui ne subit plus aucun effet de ce symptôme jusqu’à la fin de la confrontation.</br>
         <b>Fortune</b> Quelque soit sa RAI actuelle, l’acteur réussit une sauvegarde de RAI.</td>
   </tr>
   
