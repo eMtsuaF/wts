@@ -151,7 +151,7 @@ function filtreDesc() {
   <tr>
     <td><b>Amulette singulière</b></td>
     <td>[Occulte][2/2 RES][BIJOU]</td>
-    <td><i>« Un truc traditionnel je crois, mon père me l’a solennellement offert à mes 10 ans en me disant de ne jamais le retirer, et sans savoir pourquoi, je l’ai fait. »</i> +1 RÉSISTANCE contre toutes les Attaques d’entités extérieures et spirituelles. <span class="occulte">-1 RÉSISTANCE contre toutes les Attaques d’entités animales et humaines.</span></td>
+    <td><i>« Un truc traditionnel je crois, mon père me l’a solennellement offert à mes 10 ans en me disant de ne jamais le retirer, et sans savoir pourquoi, je l’ai fait. »</i> +1 RÉSISTANCE contre toutes les Attaques d’entités [C:Extérieur] et [C:Spirituel]. <span class="occulte">-1 RÉSISTANCE contre toutes les Attaques d’entités [C:Animal] et [C:Humain].</span></td>
   </tr>
 
   <tr>
@@ -356,7 +356,7 @@ function filtreDesc() {
   <tr>
     <td><b>Cigarettes importées</b></td>
     <td>[Consommable][Illicite][Médicament][3/2 RES][1 MAIN]</td>
-    <td><i>« Les remèdes locaux ne suffisent plus, au moins avec ça je pourrais rester concentré sur ce qui importe. »</i> Un paquet de cigarettes importées contient entre 7 et 12 ciragettes importées, à déterminer à l’obtention. Une fois consommée, une cigarette importée rend 2 RAI et inflige la Malédiction Bouffée de nicotine.</td>
+    <td><i>« Les remèdes locaux ne suffisent plus, au moins avec ça je pourrais rester concentré sur ce qui importe. »</i> Un paquet de cigarettes importées contient entre 7 et 12 ciragettes importées, à déterminer à l’obtention. Une fois consommée, une cigarette importée rend 2 RAI et inflige la malédiction Bouffée de nicotine.</td>
   </tr>
 
   <tr>
@@ -378,7 +378,7 @@ function filtreDesc() {
   <tr>
     <td><b>Cœur artisanal</b></td>
     <td>[Arme][Occulte][2/2 RES][1 MAIN]</td>
-    <td><i>« Pas d’inquiétude, j’ai vu le vendeur le faire devant moi. C’est une sacrée boule de nœuds, mais-Ah ! Il vient de battre ! »</i> L’Incantation de cet objet n’inflige de DGT qu’aux entités Humaines mortes-vivantes. <span class="occulte">Une Attaque réussie contre tout autre type d’entité inflige la moitié des DGT indiqués au porteur.</span></br>
+    <td><i>« Pas d’inquiétude, j’ai vu le vendeur le faire devant moi. C’est une sacrée boule de nœuds, mais-Ah ! Il vient de battre ! »</i> L’Incantation de cet objet n’inflige de DGT qu’aux entités [C:Humain][E:Spirituel]. <span class="occulte">Une Attaque réussie contre tout autre type d’entité inflige la moitié des DGT indiqués au porteur.</span></br>
         • Incantation [Primordiale][SAV+6][8 Discordants]</td>
   </tr>
 
@@ -490,7 +490,7 @@ function filtreDesc() {
   <tr>
     <td><b>Friandises pour animaux</b></td>
     <td>[Nourriture][1/0 RES][1 MAIN]</td>
-    <td><i>« Pour la énième fois, tu n’as pas de chien ! Non, je ne veux pas les goûter, ça va pas ?! »</i> Un sachet de friandises pour animaux contient entre 7 et 12 friandises, à déterminer à l’obtention. Une friandise pour animaux rend +1 END et fait perdre -1 RAI à un consommateur humain. Donner une friandise à une entité animale confère +1 CHA au porteur dans le cadre des défis de statistique contre lui.</td>
+    <td><i>« Pour la énième fois, tu n’as pas de chien ! Non, je ne veux pas les goûter, ça va pas ?! »</i> Un sachet de friandises pour animaux contient entre 7 et 12 friandises, à déterminer à l’obtention. Une friandise pour animaux rend +1 END et fait perdre -1 RAI à un consommateur humain. Donner une friandise à une entité [E:Animal] confère +1 CHA au porteur dans le cadre des défis de statistique contre lui.</td>
   </tr>
 
   <tr>
@@ -510,7 +510,7 @@ function filtreDesc() {
   <tr>
     <td><b>Grimoire poussiéreux</b></td>
     <td>[Livre][Occulte][2/2 RES][1 MAIN]</td>
-    <td><i>« Dans l’armoire de ta grand-mère hein ? Moi je dirais que t’as trouvé ça dans la bibliothèque. Tu sais laquelle. »</i> Après consultation, le porteur doit relever un défi de SAV/-. Un succès cinématique révèle un SORT dans le grimoire, un succès fait gagner 2 EXP, un échec fait perdre 1 RAI, et un échec cinématique impose une Malédiction aléatoire. <span class="occulte">L’effet néfaste de cet objet occulte est inclut dans sa description normale.</span></td>
+    <td><i>« Dans l’armoire de ta grand-mère hein ? Moi je dirais que t’as trouvé ça dans la bibliothèque. Tu sais laquelle. »</i> Après consultation, le porteur doit relever un défi de SAV/-. Un succès cinématique révèle un SORT dans le grimoire, un succès fait gagner 2 EXP, un échec fait perdre 1 RAI, et un échec cinématique impose une malédiction aléatoire. <span class="occulte">L’effet néfaste de cet objet occulte est inclut dans sa description normale.</span></td>
   </tr>
 
   <tr>
@@ -627,7 +627,7 @@ function filtreDesc() {
   <tr>
     <td><b>Médaillon d’onyx</b></td>
     <td>[Occulte][Solide][4/4 RES][BIJOU]</td>
-    <td><i>« Une météorite est tombée en plein milieu de la ville sans que personne n’ait le temps de le remarquer. Le reste s’est enfoui dans la terre, mais des écritures blanches ne cessent d’apparaître et de disparaître sur ce fragment. »</i> Le porteur ignore les effets d’une Malédiction qui l’accable. <span class="occulte">La pierre impose une Malédiction aléatoire différente au moment où elle est enfilée et chaque matin suivant. Cette Malédiction aléatoire est levée en même temps que la protection de la pierre lorsque l’objet est retiré.</span></td>
+    <td><i>« Une météorite est tombée en plein milieu de la ville sans que personne n’ait le temps de le remarquer. Le reste s’est enfoui dans la terre, mais des écritures blanches ne cessent d’apparaître et de disparaître sur ce fragment. »</i> Le porteur ignore les effets d’une malédiction qui l’accable. <span class="occulte">La pierre impose une malédiction aléatoire différente au moment où elle est enfilée et chaque matin suivant. Cette malédiction aléatoire est levée en même temps que la protection de la pierre lorsque l’objet est retiré.</span></td>
   </tr>
 
   <tr>
@@ -645,7 +645,7 @@ function filtreDesc() {
   <tr>
     <td><b>Morceau charnu</b></td>
     <td>[Consommable][Nourriture][Occulte][1/1 RES][1 MAIN]</td>
-    <td><i>« C’est pas ragoûtant pour un sou, mais c’est tout ce qui nous reste. Ouvre grand et avale tout de suite, ce sera plus facile. »</i> +4 END. <span class="occulte">Impose la Malédiction Parasité (ventre).</span></td>
+    <td><i>« C’est pas ragoûtant pour un sou, mais c’est tout ce qui nous reste. Ouvre grand et avale tout de suite, ce sera plus facile. »</i> +4 END. <span class="occulte">Impose le symptôme Incubation.</span></td>
   </tr>
 
   <tr>
@@ -681,7 +681,7 @@ function filtreDesc() {
   <tr>
     <td><b>Paquet de cigarettes</b></td>
     <td>[Consommable][Médicament][2/1 RES][1 MAIN]</td>
-    <td><i>« T’as dit que t’arrêterais, mais pour être franc, avec tout ça même moi je me laisserais tenter. »</i> Un paquet de cigarettes contient entre 7 et 12 ciragettes, à déterminer à l’obtention. Une fois consommée, une cigarette rend +1 RAI et impose la Malédiction Bouffée de nicotine. Cet objet n'occupe pas d'Espace.</td>
+    <td><i>« T’as dit que t’arrêterais, mais pour être franc, avec tout ça même moi je me laisserais tenter. »</i> Un paquet de cigarettes contient entre 7 et 12 ciragettes, à déterminer à l’obtention. Une fois consommée, une cigarette rend +1 RAI et impose la malédiction Bouffée de nicotine. Cet objet n'occupe pas d'Espace.</td>
   </tr>
 
   <tr>
@@ -695,7 +695,7 @@ function filtreDesc() {
   <tr>
     <td><b>Perles de prière</b></td>
     <td>[Occulte][2/2 RES][BIJOU]</td>
-    <td><i>« C’est un collier peu rustique, mais les gens de ce village savent comment repousser les esprits vengeurs, on devrait s’en inspirer. »</i> Le porteur peut accomplir l’activité Exorciser en ne dépensant qu’une seule action. <span class="occulte">S’il brise le dernier point d’ancrage d’une entité Spirituelle, le porteur doit relever un défi de CHA/Spirituelle ou subir une Malédiction aléatoire.</span></td>
+    <td><i>« C’est un collier peu rustique, mais les gens de ce village savent comment repousser les esprits vengeurs, on devrait s’en inspirer. »</i> Le porteur peut accomplir l’activité Exorciser en ne dépensant qu’une seule action. <span class="occulte">S’il brise le dernier point d’ancrage d’une entité spirituelle, le porteur doit relever un défi de CHA/Spirituelle ou subir une malédiction aléatoire.</span></td>
   </tr>
 
   <tr>
@@ -709,7 +709,7 @@ function filtreDesc() {
   <tr>
     <td><b>Pièce usée</b></td>
     <td>[Médicament][Occulte][Solide][2/2 RES][1 MAIN]</td>
-    <td><i>« Un triangle avec un cercle dans chaque sommet est gravé sur une face de cette pièce creuse enroulée dans un fin fil noir. Idéale pour un innoncent pile ou face. »</i> Lève une Malédiction. <span class="occulte">Lors de la prochaine confrontation, une personnification de la Malédiction levée arrive en ligne arrière adverse.</span></td>
+    <td><i>« Un triangle avec un cercle dans chaque sommet est gravé sur une face de cette pièce creuse enroulée dans un fin fil noir. Idéale pour un innoncent pile ou face. »</i> Lève une malédiction. <span class="occulte">Lors de la prochaine confrontation, une personnification de la malédiction levée arrive en ligne arrière adverse.</span></td>
   </tr>
 
   <tr>
@@ -811,7 +811,7 @@ function filtreDesc() {
   <tr>
     <td><b>Sel béni</b></td>
     <td>[Consommable][Occulte][1/1 RES][1 MAIN]</td>
-    <td><i>« J’ai lu qu’un simple cercle de sel pouvait enfermer le pire des démons, ça vaut le coup d’essayer ! »</i> Une poignée de sel béni est suffisante pour lancer un sortilège [Rituel]. <span class="occulte">Le sel béni n’inflige de dégâts qu’aux entités Spirituelles.</span></br>
+    <td><i>« J’ai lu qu’un simple cercle de sel pouvait enfermer le pire des démons, ça vaut le coup d’essayer ! »</i> Une poignée de sel béni est suffisante pour lancer un sortilège [Rituel]. <span class="occulte">Le sel béni n’inflige de dégâts qu’aux entités spirituelles.</span></br>
         • Lancer [Primordiale][DEX+5][8 Miraculeux]</td>
   </tr>
 
