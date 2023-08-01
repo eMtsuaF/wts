@@ -20,7 +20,6 @@ a {
 }
 
 .input {
-  background-image: url('/css/searchicon.png');
   background-position: 10px 10px;
   background-repeat: no-repeat;
   font-size: 16px;
@@ -350,7 +349,7 @@ function filtreDesc() {
     <td><b>挙 Immortel vulnérable</b></td>
     <td><i>« Bien sûr que je vais tenir. Pas besoin d’être la cible d’un culte pour connaître le pire, il suffit de rentrer à la maison. »</i>.</br>
         <b>Activité - Endurer (0 ; Défensive)</b> L’acteur refuse de partir, s’attachant bêtement et simplement à la vie comme une tique s’attache à la jambe d’un voyageur. Si une Frappe, une Incantation, un Lancer ou une Projection devrait réduire l’acteur à 0 END ou 0 RAI, il peut immédiatement utiliser cette activité en réaction pour éviter de tomber sous 1 et contracter un symptôme ([Physique] dans le cas de l’END, [Psychique] dans le cas de la RAI). L’acteur ne peut pas utiliser cette activité s’il a déjà un symptôme (quel qu’il soit).</br>
-        <b>Fortune</b> +2 END, +2 RAI.</td>
+        <b>Fortune</b> +2 END max, +2 RAI max.</td>
   </tr>
 
   <tr>
@@ -393,11 +392,18 @@ function filtreDesc() {
   </tr>
 
   <tr>
+    <td><b>挙 Patriote résolu</b></td>
+    <td><i>« Le reste du monde a bien raison de prendre exemple, je suis fier de mon pays, et il me le rend à chaque levé de soleil. »</i>.</br>
+        <b>Activité - Éprouver (1∧ ; Défensive)</b> L'acteur transforme la prochaine Attaque physique qui le cible en Attaque psychique ou inversement, à déterminer à la dépense d'action.</br>
+        <b>Fortune</b> +6 END, -2 END max, +6 RAI, -2 RAI max.</td>
+  </tr>
+
+  <tr>
     <td><b>姿 Popularité grandissante</b></td>
     <td><i>« Être une idole, c’est beaucoup de travail. »</i>.</br>
         <b>Avantages</b> +1 CHA, +1 RES ; L’acteur est reconnu dans la rue, pour le meilleur et pour le pire.</br>
         <b>Soutien</b> +2 à la marge de réussite des défis opposés.</br>
-        <b>Fortune</b> Relève automatiquement un défi de CHA.</td>
+        <b>Fortune</b> Copie la Fortune d'un autre talent.</td>
   </tr>
   
   <tr>
@@ -479,7 +485,7 @@ function filtreDesc() {
   <tr>
     <td><b>姿 Titre de Yakuza</b></td>
     <td><i>« Vous avez tout intérêt à m’ignorer. »</i>.</br>
-        <b>Avantages</b> +2 CHA, peut se procurer des objets [Illicite], +1 au niveau de danger si le CHA n'est pas sollicité ; L'acteur est familier avec le monde criminel.</br>
+        <b>Avantages</b> +2 CHA, +1 au niveau de danger si le CHA n'est pas sollicité, peut se procurer des objets [Illicite] ; L'acteur est familier avec le monde criminel.</br>
         <b>Soutien</b> +1 PRÉCISION si l'Attaque est portée avec un objet [Illicite].</br>
         <b>Fortune</b> Réussit automatiquement une Attaque, ou perd ce talent et gagne +2 RES.</td>
   </tr>
