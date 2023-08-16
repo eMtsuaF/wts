@@ -285,7 +285,7 @@ function filtreDesc() {
   <tr>
     <td><b>挙 Éclaireur</b></td>
     <td><i>« Restez devant, je m’occupe d’éclairer les alentours. Si vous voyez quoi que ce soit, criez. »</i>.</br>
-        <b>Activité - Éblouir (1∨ ; Offensive)</b> L’acteur utilise une [Lumière] qu’il tient en main pour destabiliser une entité en ligne de front adverse. Chacun doit relever un défi opposé de PER. Si l’acteur a l’ascendant, sa cible voit la PRÉCISION de sa prochaine Attaque physique réduite de 1. Les effets de cette activité ne se cumulent pas entre eux et n’opèrent pas contre une entité qui ne se sert pas d’une perception visuelle.</br>
+        <b>Activité - Éblouir (1∨ ; Offensive)</b> L’acteur utilise une [Lumière] qu’il tient en main pour déstabiliser une entité en ligne de front adverse. Chacun doit relever un défi opposé de PER. Si l’acteur a l’ascendant, sa cible voit la PRÉCISION de sa prochaine Attaque physique réduite de 1. Les effets de cette activité ne se cumulent pas entre eux et n’opèrent pas contre une entité qui ne se sert pas d’une perception visuelle.</br>
         <b>Fortune</b> Où qu’il soit, l’acteur trouve un objet [Lumière] qui coûte 3 RES ou moins.</td>
   </tr>
 
@@ -294,7 +294,7 @@ function filtreDesc() {
     <td><i>« Un dernier coup d’œil par dessus mon épaule. »</i>.</br>
         <b>Avantages</b> +2 DEX, -1 à toutes les autres STAT ; L’acteur glisse des entraves comme un serpent et court sans se fatiguer.</br>
         <b>Soutien</b> Permet de Fuir depuis la ligne de front sans dépenser d'action.</br>
-        <b>Fortune</b> Remplace ce talent par un autre.</td>
+        <b>Fortune</b> Remplace ce talent par un autre (comme s’il prenait un niveau).</td>
   </tr>
 
   <tr>
@@ -307,7 +307,7 @@ function filtreDesc() {
 
   <tr>
     <td><b>姿 Études anthropologiques</b></td>
-    <td><i>« Leurs croyances sont fascinantes quand on connaît la vérité. »</i>.</br>
+    <td><i>« Leurs croyances sont d'autant plus fascinantes quand on connaît la vérité. »</i>.</br>
         <b>Avantages</b> +1 SAV ; L’acteur a une connaissance étendue des traditions rurales.</br>
         <b>Soutien</b> +1 PRÉCISION si un acteur a obtenu un succès cinématique pour Raisonner lors de la confrontation.</br>
         <b>Fortune</b> Relève automatiquement un défi de SAV.</td>
@@ -348,7 +348,7 @@ function filtreDesc() {
   <tr>
     <td><b>挙 Immortel vulnérable</b></td>
     <td><i>« Bien sûr que je vais tenir. Pas besoin d’être la cible d’un culte pour connaître le pire, il suffit de rentrer à la maison. »</i>.</br>
-        <b>Activité - Endurer (0 ; Défensive)</b> L’acteur refuse de partir, s’attachant bêtement et simplement à la vie comme une tique s’attache à la jambe d’un voyageur. Si une Frappe, une Incantation, un Lancer ou une Projection devrait réduire l’acteur à 0 END ou 0 RAI, il peut immédiatement utiliser cette activité en réaction pour éviter de tomber sous 1 et contracter un symptôme ([Physique] dans le cas de l’END, [Psychique] dans le cas de la RAI). L’acteur ne peut pas utiliser cette activité s’il a déjà un symptôme (quel qu’il soit).</br>
+        <b>Activité - Endurer (0 ; Défensive)</b> L’acteur refuse de partir, s’attachant bêtement et simplement à la vie comme une tique s’attache à la jambe d’un voyageur. Si une Frappe, une Incantation, un Lancer ou une Projection devrait réduire l’acteur à 0 END ou 0 RAI, il peut immédiatement utiliser cette activité en réaction pour éviter de tomber sous 1 et contracter un symptôme majeur ([Physique] dans le cas de l’END, [Psychique] dans le cas de la RAI). L’acteur ne peut pas utiliser cette activité s’il a déjà un symptôme (quel qu’il soit).</br>
         <b>Fortune</b> +2 END max, +2 RAI max.</td>
   </tr>
 
@@ -395,7 +395,7 @@ function filtreDesc() {
     <td><b>姿 Organisation irréprochable</b></td>
     <td><i>« Sans moi, vous oublieriez vos chaussures. »</i>.</br>
         <b>Avantages</b> +1 Espace ; L’acteur est plus efficace lorsqu’il s’agit de fouiller un lieu en désordre pour y trouver des objets censément perdus.</br>
-        <b>Soutien</b> Permet d'Intéragir deux fois sans dépenser d'action.</br>
+        <b>Soutien</b> Permet d'Intéragir une fois sans dépenser d'action.</br>
         <b>Fortune</b> L’acteur trouve un objet d’un coût de 2 RES ou moins qui se brise 24 heures après l’utilisation de cette Fortune.</td>
   </tr>
 
@@ -426,7 +426,7 @@ function filtreDesc() {
     <td><b>姿 Pression familiale</b></td>
     <td><i>« L’échec n’est pas une option. »</i>.</br>
         <b>Avantages</b> +1 RAI à chaque défi de statistique relevé avec succès, -1 à chaque échec ; L’acteur est moins enclin à perdre pied lorsqu’il est soumis à une pression extrême.</br>
-        <b>Soutien</b> +1 RAI si l'Attaque ignore la RÉSISTANCE adverse.</br>
+        <b>Soutien</b> +1 RAI si l'Attaque ignore la RÉSISTANCE adverse, -1 sinon.</br>
         <b>Fortune</b> Un défi relevé avec succès devient un succès cinématique, ou un défi échoué devient un succès.</td>
   </tr>
 
@@ -494,7 +494,7 @@ function filtreDesc() {
   <tr>
     <td><b>挙 Térapeuthe amateur</b></td>
     <td><i>« Prends ma main et regarde moi dans les yeux. Tu es là avec moi, c’est tout ce qui compte pour l’instant. Bats-toi pour ça. »</i>.</br>
-        <b>Activité - Rassurer (2∨ ; Coopérative)</b> L’acteur prend toute l’attention d’une entité consentante pour la calmer et l’aider à se concentrer sur le moment présent. Il désigne un acteur sur la ligne arrière alliée qui souffre d’un symptôme [Psychique] qui ne subit plus aucun effet de ce symptôme jusqu’à la fin de la confrontation.</br>
+        <b>Activité - Rassurer (2∨ ; Coopérative)</b> L’acteur prend toute l’attention d’une entité consentante pour la calmer et l’aider à se concentrer sur le moment présent. Il désigne un acteur sur la ligne arrière alliée qui souffre d’un symptôme [Psychique]. Les effets de ce symptôme sont suspendus jusqu’à la fin de la confrontation.</br>
         <b>Fortune</b> Quelque soit sa RAI actuelle, l’acteur réussit une sauvegarde de RAI.</td>
   </tr>
   
